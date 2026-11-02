@@ -20,7 +20,7 @@ test("web references canonical scoring and item files, not duplicates or backend
   assert.ok(js.includes('fetch("../../items/indicators.json")'));
   assert.ok(js.includes('fetch("../../items/gates.json")'));
   assert.ok(html.includes('src="./app.mjs"'));
-  assert.ok(html.includes('href="../../framework/MEASUREMENT_MODEL.md"'));
+  assert.ok(html.includes("PUBLIC_GUIDE_EN.md"));
   assert.ok(home.includes('href="./assessment.html"'));
   assert.ok(!home.includes('id="indicator-list"'), "do not embed questionnaire in homepage");
   assert.ok(!home.includes('src="./app.mjs"'), "assessment engine should not load on homepage");

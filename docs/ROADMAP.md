@@ -45,6 +45,15 @@ The public brand is ReadyGap; the proposed general measurement framework is U-AR
 
 **Principle: Diverge → Observe → Converge → Validate → Quantify.** Creativity is not a shortcut to scientific claims; scientific scrutiny should refine useful ideas rather than prevent their discovery.
 
+## Public language policy (post-launch)
+
+- [x] English-only homepage and assessment page (no language selector or duplicate Chinese routes)
+- [x] Translate all dynamic survey definitions, gate checks, result labels, errors, actions, and shareable summaries
+- [x] Preserve original scoring formulas while adding `*_en` fields to canonical metric/gate JSON
+- [x] Add English public guide for links from both web pages
+- [x] Enforce public-facing English with CI checks for source copy, HTML lang, and contract completeness
+- [ ] Native-English wording review with users from multiple sectors
+
 ## v0.2 — shareable public experience and meaningful task sampling
 
 - [ ] Launch verified public site and add easy-to-share versioned report/card (opt-in only)

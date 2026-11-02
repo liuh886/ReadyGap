@@ -60,7 +60,14 @@
         "self_report",
         "documented",
         "observed"
-      ]
+      ],
+      "what_en": "Share of eligible activities with explicit inputs, outputs, and acceptance criteria.",
+      "why_en": "Without observable success criteria, an AI-assisted result cannot be evaluated consistently.",
+      "numerator_en": "Number of eligible activities documenting all three: inputs, outputs, and acceptance criteria.",
+      "denominator_en": "Total eligible activities in the declared assessment scope.",
+      "evidence_en": "Task briefs, process cards, or documented acceptance criteria.",
+      "action_en": "Create a one-page task specification for each activity without clear requirements.",
+      "caveat_en": "Do not cherry-pick activities that were easiest to define."
     },
     {
       "id": "I02",
@@ -81,7 +88,14 @@
         "self_report",
         "documented",
         "observed"
-      ]
+      ],
+      "what_en": "Share of eligible activities with a reproducible pre-AI time or quality baseline.",
+      "why_en": "Without a baseline, improvements and unintended effects cannot be assessed.",
+      "numerator_en": "Number of eligible activities with recorded time or quality baselines and a stated collection method.",
+      "denominator_en": "Total eligible activities in the declared assessment scope.",
+      "evidence_en": "Dated time logs, error-rate records, or quality review history.",
+      "action_en": "Begin recording a verifiable baseline for activities without one.",
+      "caveat_en": "A one-off guess is not a reproducible baseline."
     },
     {
       "id": "I03",
@@ -102,7 +116,14 @@
         "self_report",
         "documented",
         "observed"
-      ]
+      ],
+      "what_en": "Share of context-dependent activities with accessible, authorized source materials.",
+      "why_en": "An AI system cannot reliably use private knowledge it cannot access legitimately.",
+      "numerator_en": "Number of context-dependent activities with both access and permission for required materials.",
+      "denominator_en": "Eligible activities requiring external or private task context.",
+      "evidence_en": "Source inventories, access-control records, and authorization evidence.",
+      "action_en": "Organize required materials and resolve access or authorization gaps.",
+      "caveat_en": "Both access and authorization are required; use N/A if no activity needs external context."
     },
     {
       "id": "I04",
@@ -123,7 +144,14 @@
         "self_report",
         "documented",
         "observed"
-      ]
+      ],
+      "what_en": "Share of context-dependent activities whose critical information has traceable provenance and freshness controls.",
+      "why_en": "Untraceable or outdated context can produce incorrect results even when it is accessible.",
+      "numerator_en": "Number of relevant activities whose key materials have traceable sources and an update date or owner.",
+      "denominator_en": "Eligible activities requiring external or private task context.",
+      "evidence_en": "Source links, version history, ownership, and update timestamps.",
+      "action_en": "Add provenance, versioning, and maintenance ownership for frequently reused knowledge.",
+      "caveat_en": "A filename without a trustworthy source does not satisfy this criterion."
     },
     {
       "id": "I05",
@@ -144,7 +172,14 @@
         "self_report",
         "documented",
         "observed"
-      ]
+      ],
+      "what_en": "Share of eligible activities with at least one stable, authorized path to AI use.",
+      "why_en": "A paid subscription does not imply that a specific task can use the tool appropriately.",
+      "numerator_en": "Number of eligible activities with a stable AI tool approved for the task.",
+      "denominator_en": "Total eligible activities in the declared assessment scope.",
+      "evidence_en": "Approved tool inventories, access records, or access demonstrations.",
+      "action_en": "Map activities to approved AI tools and repair access or authorization gaps.",
+      "caveat_en": "Uploading restricted data to an unapproved tool does not count."
     },
     {
       "id": "I06",
@@ -165,7 +200,14 @@
         "self_report",
         "documented",
         "observed"
-      ]
+      ],
+      "what_en": "Share of activities requiring external actions with a controlled tool interface or explicit human handoff.",
+      "why_en": "Generating a response alone cannot complete a workflow that requires actions in another system.",
+      "numerator_en": "Number of action-dependent activities with authorized APIs/tools or a documented human handoff.",
+      "denominator_en": "Eligible activities that require an external action.",
+      "evidence_en": "Tool permission records, interface tests, or documented human execution handoffs.",
+      "action_en": "Provide the minimum authorized interface or formalize the human action handoff.",
+      "caveat_en": "Read-only activities need no action interface; use N/A if the denominator is zero."
     },
     {
       "id": "I07",
@@ -186,7 +228,14 @@
         "self_report",
         "documented",
         "observed"
-      ]
+      ],
+      "what_en": "Share of eligible activities with clear AI roles, human accountability, and handoff points.",
+      "why_en": "Unclear ownership causes workflow breaks and unchecked error propagation.",
+      "numerator_en": "Number of activities with defined AI tasks, human responsibility, and critical handoff points.",
+      "denominator_en": "Total eligible activities in the declared assessment scope.",
+      "evidence_en": "Workflow diagrams, responsibility matrices, and handoff records.",
+      "action_en": "Document who does what, including escalation and takeover points.",
+      "caveat_en": "A vague statement such as 'human–AI collaboration' does not count."
     },
     {
       "id": "I08",
@@ -207,7 +256,14 @@
         "self_report",
         "documented",
         "observed"
-      ]
+      ],
+      "what_en": "Share of eligible activities with repeatable procedures and specified input/output handoffs.",
+      "why_en": "A successful one-off demo does not guarantee repeatability in routine work.",
+      "numerator_en": "Number of activities whose core steps another qualified operator could reproduce from instructions.",
+      "denominator_en": "Total eligible activities in the declared assessment scope.",
+      "evidence_en": "SOPs, workflow templates, or repeated-execution records.",
+      "action_en": "Document a reproducible workflow or minimal SOP.",
+      "caveat_en": "Procedure repeatability does not replace an end-to-end AI trial."
     },
     {
       "id": "I09",
@@ -228,7 +284,14 @@
         "self_report",
         "documented",
         "observed"
-      ]
+      ],
+      "what_en": "Share of eligible activities with executable checks and explicit failure criteria.",
+      "why_en": "Reliable AI-assisted work requires a way to detect incorrect or unacceptable outputs.",
+      "numerator_en": "Number of activities with actionable acceptance checks and failure criteria.",
+      "denominator_en": "Total eligible activities in the declared assessment scope.",
+      "evidence_en": "Checklists, test cases, or written review criteria.",
+      "action_en": "Create repeatable validation steps and sample cases for key outputs.",
+      "caveat_en": "A subjective 'looks fine' check is not sufficient."
     },
     {
       "id": "I10",
@@ -249,7 +312,14 @@
         "self_report",
         "documented",
         "observed"
-      ]
+      ],
+      "what_en": "Share of eligible activities with suitable authorization, oversight, incident handling, and recovery routes.",
+      "why_en": "A workflow without takeover and recovery capability should not run without further controls.",
+      "numerator_en": "Number of activities with access oversight, incident response, and recovery plans.",
+      "denominator_en": "Total eligible activities in the declared assessment scope.",
+      "evidence_en": "Approval or revocation controls, incident procedures, and named owners.",
+      "action_en": "Add approval, human takeover, and rollback or recovery arrangements.",
+      "caveat_en": "High-risk activities need separate specialist review regardless of this result."
     },
     {
       "id": "I11",
@@ -270,7 +340,14 @@
         "self_report",
         "documented",
         "observed"
-      ]
+      ],
+      "what_en": "Share of eligible activities for which quality, time, or failure feedback can be captured.",
+      "why_en": "Without usable feedback, the entity cannot tell whether AI makes work better or worse.",
+      "numerator_en": "Number of activities with defined feedback signals and a workable collection method.",
+      "denominator_en": "Total eligible activities in the declared assessment scope.",
+      "evidence_en": "Logging field definitions, feedback templates, or measurement plans.",
+      "action_en": "Add a lightweight feedback recording mechanism.",
+      "caveat_en": "This measures measurement capability, not realized savings or success."
     },
     {
       "id": "I12",
@@ -291,7 +368,14 @@
         "self_report",
         "documented",
         "observed"
-      ]
+      ],
+      "what_en": "Share of eligible activities with an owner and triggering rules for corrective action or retesting.",
+      "why_en": "Recording issues alone does not guarantee learning or improvement.",
+      "numerator_en": "Number of activities with a named feedback owner and defined corrective or retest triggers.",
+      "denominator_en": "Total eligible activities in the declared assessment scope.",
+      "evidence_en": "Owner records, retest procedures, and corrective-action triggers.",
+      "action_en": "Assign improvement ownership and a minimum retest loop.",
+      "caveat_en": "Do not use savings or realized ROI as evidence for this readiness indicator."
     }
   ]
 }
