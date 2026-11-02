@@ -1,6 +1,7 @@
 import { scoreIndicators, scoreTasks } from "../../scoring/engine.mjs";
+import { applyAssessmentLocale, buildDictionary, normalizeLanguage } from "./assessment-i18n.mjs";
 
-// English-only public assessment. Numeric scoring is provided by the shared engine.
+// Bilingual assessment using the same numeric scoring engine and questionnaire definitions.
 const $ = selector => document.querySelector(selector);
 const esc = value => String(value ?? "").replace(/[&<>"']/g, c => ({
   "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
@@ -10,6 +11,42 @@ let registry;
 let gates;
 let taskNumber = 0;
 let shareText = "";
+let language = normalizeLanguage(new URLSearchParams(window.location.search).get("lang"));
+let lastReport = null;
+const subjectNames = {individual:"Individual",team:"Team",department:"Department",
+  company:"Company",group:"Group",other:"Other entity"};
+function localize() { applyAssessmentLocale(document, language, buildDictionary(registry,gates)); }
+function summaryText(cap, cov, entity) {
+  const score = cap.reportable ? cap.readyScore.toFixed(1)+"/100" : (language==="zh"?"无法报告":"Not reportable");
+  const coverage = cov.readyCoverage===null ? (language==="zh"?"无法报告":"Not reportable") : cov.readyCoverage.toFixed(1)+"%";
+  return language==="zh" ? [
+    "ReadyGap · 实验性测评 v0.1",
+    "主体类别："+entity,
+    "ReadyScore："+score, "Ready Coverage："+coverage,
+    "适用任务数："+cov.eligible, "已确认具备试点条件："+cov.confirmedReady,
+    "自报、未经科学校准；不构成认证或全球百分位。",
+    "https://liuh886.github.io/ReadyGap/"
+  ].join("\n") : [
+    "ReadyGap · Experimental v0.1",
+    "Entity type: "+entity,
+    "ReadyScore: "+score, "Ready Coverage: "+coverage,
+    "Eligible activities: "+cov.eligible,
+    "Confirmed pilot-ready: "+cov.confirmedReady,
+    "Self-reported, unvalidated; no certification or global percentile.",
+    "https://liuh886.github.io/ReadyGap/"
+  ].join("\n");
+}
+function changeLanguage(next) {
+  language=normalizeLanguage(next);
+  const url=new URL(window.location.href);
+  url.searchParams.set("lang",language);
+  window.history.replaceState(null,"",url);
+  localize();
+  if(lastReport) {
+    shareText=summaryText(lastReport.capability,lastReport.coverage,
+      $("#subject").selectedOptions[0].textContent);
+  }
+}
 
 const evidenceOptions = [
   ["self_report", "Self-reported"],
@@ -46,6 +83,7 @@ function renderIndicators() {
         '</select></label></div>').join("") +
       '</section>';
   }).join("");
+  localize();
 }
 
 function addTask() {
@@ -83,6 +121,7 @@ function addTask() {
   el.querySelector(".remove-btn").addEventListener("click", () => el.remove());
   $("#task-list").append(el);
   el.querySelector(".task-name").focus();
+  localize();
 }
 
 function collectIndicatorResponses() {
@@ -164,7 +203,7 @@ function nextActions(coverage) {
 }
 
 function renderReport(capability, coverage) {
-  const entityType = $("#subject").selectedOptions[0].textContent;
+  const entityType = subjectNames[$("#subject").value] || "Other entity";
   const score = capability.reportable ? capability.readyScore.toFixed(1) : "—";
   const coverageText = coverage.readyCoverage === null ? "—" : coverage.readyCoverage.toFixed(1) + "%";
   const domainLabels = Object.fromEntries(registry.domains.map(d => [d.id, d.title_en]));
@@ -208,29 +247,28 @@ function renderReport(capability, coverage) {
       'It does not imply a successful trial. Outcomes, risks, and implementation costs are not included.</p></div>' +
     '<button type="button" id="share-results" class="share-btn">Copy aggregate summary (no activity names) ↗</button>';
 
-  shareText = [
-    "ReadyGap · Experimental v0.1",
-    "Entity type: " + entityType,
-    "ReadyScore: " + (capability.reportable ? score + "/100" : "Not reportable"),
-    "Ready Coverage: " + (coverage.readyCoverage === null ? "Not reportable" : coverageText),
-    "Eligible activities: " + coverage.eligible,
-    "Confirmed pilot-ready: " + coverage.confirmedReady,
-    "Self-reported, unvalidated; no certification or global percentile.",
-    "https://liuh886.github.io/ReadyGap/"
-  ].join("\n");
+  lastReport={capability,coverage};
+  shareText=summaryText(capability,coverage,$("#subject").selectedOptions[0].textContent);
 
   $("#share-results").addEventListener("click", async event => {
     try {
       await navigator.clipboard.writeText(shareText);
       event.currentTarget.textContent = "Summary copied ✓";
+      localize();
     } catch {
       event.currentTarget.textContent = "Clipboard unavailable. Use HTTPS or localhost.";
+      localize();
     }
   });
+  localize();
   $("#results").scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 async function initialize() {
+  for(const btn of document.querySelectorAll("[data-language]")){
+    btn.addEventListener("click",()=>changeLanguage(btn.dataset.language));
+  }
+  localize();
   try {
     const responses = await Promise.all([
       fetch("../../items/indicators.json"), fetch("../../items/gates.json")
@@ -259,6 +297,7 @@ async function initialize() {
       } catch (error) {
         $("#results").innerHTML = '<div class="error">Please check your inputs: ' +
           esc(error.message) + '</div>';
+        localize();
         $("#results").scrollIntoView({ behavior: "smooth" });
       }
     });
@@ -266,6 +305,7 @@ async function initialize() {
     $("#indicator-list").innerHTML =
       '<div class="error">Could not load the assessment: ' + esc(error.message) +
       '. Serve this site over HTTP rather than opening file://.</div>';
+    localize();
   }
 }
 initialize();
