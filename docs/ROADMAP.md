@@ -18,9 +18,20 @@ The public brand is ReadyGap; the proposed general measurement framework is U-AR
 - [ ] Cognitive pretests with individuals, teams, departments and organizations
 - [ ] Browser accessibility, mobile and deployment verification (not yet claimed)
 
+## Website information architecture — concept first (PR #1)
+
+- [x] Separate a research-led public **homepage** from the detailed **assessment** route
+- [x] Hero: **AI is advancing. Are we ready?** with an explicitly conceptual model-vs-entity gap visual
+- [x] Explain the thesis and distinction between Readiness, Adoption and Realized Value before any questionnaire
+- [x] Feature five unconventional measurement perspectives without claiming they are validated score inputs
+- [x] Introduce ReadyScore / Ready Coverage as different lenses rather than publishing sample scores
+- [x] Preserve independent assessment scoring, source definitions and privacy constraints
+- [ ] Visual/browser QA across narrow screens, desktops and keyboard-only navigation
+- [ ] Decide and configure hosted public launch; do not claim a live URL before verification
+
 ## Exploration sprint — diverge before measuring harder
 
-- [x] Establish [Creative Metrics Lab](../items/CREATIVE_METRICS_LAB.md): 24 unvalidated but observable candidate signals with proposed numeric probes and actions
+- [x] Establish [Creative Metrics Lab](../items/CREATIVE_METRICS_LAB.md): 25 unvalidated but observable candidate signals with proposed numeric probes and actions
 - [x] Keep *precondition*, *friction*, *stress test*, *outcome* and *model interaction* measures conceptually separate
 - [x] Draft [Fast Field Pilots](../validation/FAST_PILOTS.md) for context warm-up, cold start, last-mile action, safe recovery and model-upgrade capture
 - [ ] Trial a small selection against pre-selected tasks for one individual, one small team and one larger coordinating entity

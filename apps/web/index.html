@@ -3,73 +3,231 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="description" content="ReadyGap — an open, experimental assessment of AI readiness, task coverage and actionable operational bottlenecks."/>
-  <title>ReadyGap — Know your readiness. Unlock your potential.</title>
-  <link rel="stylesheet" href="./styles.css"/>
-  <script type="module" src="./app.mjs"></script>
+  <meta name="theme-color" content="#111b28"/>
+  <meta name="description" content="ReadyGap: 衡量主体的 AI 就绪度，而不是模型的智能水平。从真实工作出发，发现 AI 应用的隐形阻碍。开源、模型中立。"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="ReadyGap — AI is advancing. Are you ready?"/>
+  <meta property="og:description" content="Measure the readiness of the entity, not the intelligence of the model."/>
+  <title>ReadyGap — AI is advancing. Are you ready?</title>
+  <link rel="stylesheet" href="./landing.css"/>
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="#top" aria-label="ReadyGap 首页"><span class="brandmark">R<span class="dot">.</span></span> ReadyGap</a>
-    <nav aria-label="页面导航"><a href="#method">方法</a><a href="#capability">能力量表</a><a href="#tasks">任务检验</a><a href="https://github.com/liuh886/ReadyGap" target="_blank" rel="noopener">GitHub ↗</a></nav>
+  <a class="skip-link" href="#main">跳转至内容</a>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="logo" href="./" aria-label="ReadyGap 主页"><span class="logo-emblem" aria-hidden="true">R<span>.</span></span><span>ReadyGap</span></a>
+      <nav aria-label="主导航">
+        <a href="#thesis">为什么</a>
+        <a href="#signals">新视角</a>
+        <a href="#measure">如何度量</a>
+        <a class="nav-github" href="https://github.com/liuh886/ReadyGap" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+      </nav>
+      <a class="nav-cta" href="./assessment.html">体验测评 <span aria-hidden="true">↗</span></a>
+    </div>
   </header>
-  <main id="top">
-    <section class="hero">
-      <div class="eyebrow"><span class="status-dot"></span> OPEN ASSESSMENT · EXPERIMENTAL V0.1</div>
-      <h1>AI is advancing.<br><em>Are you ready?</em></h1>
-      <p class="lede">当大模型的能力不断进步，你、你的团队或组织是否真正准备好了？模型能力与主体吸收、整合和使用 AI 的能力，是两个不同的改进变量。发现你已有的条件、实际活动中的阻碍，以及下一步可行动的改变。</p>
-      <div class="hero-chips"><span>测量主体，而不是模型</span><span>个人 · 团队 · 部门 · 组织</span><span>双指标量化</span><span>不登录 · 不上传</span></div>
-      <a href="#capability" class="primary-link">开始评估 <span aria-hidden="true">↗</span></a>
-    </section>
-    <section class="score-intro" aria-label="两个核心指标">
-      <article class="intro-card"><div class="mini-kicker">01 / ENTITY</div><h2>ReadyScore <span>0–100</span></h2><p>测量主体是否具有将 AI 用于实际活动的基础能力。六大维度，12 个可计量指标。</p></article>
-      <article class="intro-card"><div class="mini-kicker">02 / WORKFLOW</div><h2>Ready Coverage <span>0–100%</span></h2><p>在已筛选的 AI 适用活动中，有多少已经通过必要条件检查和代表性试运行。</p></article>
-    </section>
-    <section class="method-strip" id="method">
-      <div><span class="step">MEASURE</span><strong>先定义可观察能力</strong><small>What / Why</small></div>
-      <div class="arrow">→</div>
-      <div><span class="step">VERIFY</span><strong>再确定分子、分母、证据</strong><small>Number / Evidence</small></div>
-      <div class="arrow">→</div>
-      <div><span class="step">IMPROVE</span><strong>最后找到可以改变的约束</strong><small>Action</small></div>
-    </section>
-    <form id="assessment" novalidate>
-      <section class="section-block" id="capability">
-        <div class="section-header"><div><span class="section-tag">PART 01 · CAPABILITY</span><h2>主体能力测量</h2><p>按最近 30 天、一个明确范围统计。每项填入满足条件的数量和适用总数；未掌握的数据可以留空，确实不适用时填写 0/0。</p></div><span class="section-counter">12 METRICS</span></div>
-        <div class="panel scope-panel">
-          <label for="subject">评估主体</label>
-          <select id="subject" name="subject">
-            <option value="individual">个人 Individual</option>
-            <option value="team">团队 Team</option>
-            <option value="department">部门 Department</option>
-            <option value="company">企业 Company</option>
-            <option value="group">集团 Group</option>
-            <option value="other">其他主体 Other</option>
-          </select>
-          <label for="scope">评估范围（可选，不会进入公开分享文本）</label>
-          <input id="scope" placeholder="例如：我的每周工作 / 某部门 30 天重复性业务"/>
-          <p class="note">请不要只选择已经成功使用 AI 的任务。个人自评不能自动代表整个公司的真实状况。</p>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="pulse" aria-hidden="true"></span> AN OPEN EXPERIMENT IN AI READINESS <span class="eyebrow-index">/ V0.1</span></p>
+          <h1 id="hero-title">AI is advancing.<br/><span>Are we ready?</span></h1>
+          <p class="hero-title-zh">模型越来越强，<br/>我们准备好了吗？</p>
+          <p class="hero-lede">我们已经有无数榜单衡量 AI 能做什么。<br/>但很少有人测量：<strong>人、团队和组织，究竟能让 AI 做成什么？</strong></p>
+          <div class="hero-actions">
+            <a class="button button-light" href="#thesis">了解 ReadyGap <span aria-hidden="true">↘</span></a>
+            <a class="button button-outline" href="./assessment.html">体验初版测评 <span aria-hidden="true">↗</span></a>
+          </div>
+          <p class="hero-note">OPEN SOURCE · MODEL-INDEPENDENT · INDIVIDUALS TO ORGANIZATIONS</p>
         </div>
-        <div id="indicator-list" class="indicator-list"><p class="subtle">正在加载指标定义……</p></div>
-      </section>
-      <section class="section-block" id="tasks">
-        <div class="section-header"><div><span class="section-tag">PART 02 · WORKFLOW</span><h2>任务运行条件</h2><p>从事先确定的活动清单中选取有代表性的任务；建议至少 3 项。每项先判断是否适合 AI，再逐项检查必要条件。</p></div><span class="section-counter">6 GATES + TRIAL</span></div>
-        <div class="scope-warning">只有全部必要条件通过、风险类别为常规且有通过记录的代表性试运行，任务才计入 <strong>Ready Coverage</strong>。高风险任务不能在本站获得安全认证。</div>
-        <div id="task-list"></div>
-        <button id="add-task" class="secondary-btn" type="button">＋ 添加一项活动</button>
-      </section>
-      <div class="submit-row">
-        <p class="note">所有计算在当前浏览器完成。请勿输入敏感信息；本页面不保存个人或组织数据。</p>
-        <button class="main-btn" type="submit">计算 ReadyGap 报告 <span>→</span></button>
+        <div class="hero-visual">
+          <div class="visual-top"><span class="mini-index">THE MISSING VARIABLE</span><span class="visual-decoration" aria-hidden="true">◌ ◌ ◌</span></div>
+          <svg class="hero-diagram" viewBox="0 0 540 392" role="img" aria-label="概念示意：模型能力和主体就绪度可能以不同速度发展；两者之间存在需要识别和改善的缺口。不是实测数据。">
+            <defs>
+              <linearGradient id="modelLine" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#71e4d1"/><stop offset="100%" stop-color="#b0f9e1"/></linearGradient>
+              <linearGradient id="gapGradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#75d6c1" stop-opacity=".18"/><stop offset="100%" stop-color="#75d6c1" stop-opacity="0"/></linearGradient>
+            </defs>
+            <g stroke="#5b6b7b" stroke-width="1" opacity=".25">
+              <path d="M45 75 H510 M45 140 H510 M45 205 H510 M45 270 H510 M45 335 H510"/>
+              <path d="M45 45 V343 M138 45 V343 M231 45 V343 M324 45 V343 M417 45 V343 M510 45 V343"/>
+            </g>
+            <path d="M45 270 C115 259 147 223 214 201 S340 128 400 104 S470 69 510 45 L510 255 C445 260 396 258 335 272 S225 286 156 296 S77 308 45 314Z" fill="url(#gapGradient)"/>
+            <path d="M45 270 C115 259 147 223 214 201 S340 128 400 104 S470 69 510 45" stroke="url(#modelLine)" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+            <path d="M45 314 C114 299 157 299 215 294 S332 276 399 269 S468 265 510 255" stroke="#97a8c1" stroke-width="3.4" stroke-dasharray="8 8" fill="none" stroke-linecap="round"/>
+            <circle cx="400" cy="104" r="7.5" fill="#a9f3dc" stroke="#182a38" stroke-width="4"/>
+            <circle cx="399" cy="269" r="7.5" fill="#b7c8db" stroke="#182a38" stroke-width="4"/>
+            <path d="M399 116 V256" stroke="#e0eee9" opacity=".8" stroke-dasharray="4 7" stroke-width="1.6"/>
+            <g font-family="Inter,Arial,sans-serif" font-size="15">
+              <text x="310" y="67" fill="#c3f9e7" font-weight="600">Model capability</text>
+              <text x="310" y="318" fill="#bdc8d6" font-weight="600">Entity readiness</text>
+            </g>
+            <rect x="298" y="172" width="160" height="39" rx="8" fill="#203747" stroke="#3b5663"/>
+            <text x="378" y="196" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="700" fill="#f0f8f6">THE READY GAP</text>
+            <text x="46" y="369" font-family="Inter,Arial,sans-serif" font-size="12" fill="#8ca1b2">THEN</text>
+            <text x="473" y="369" font-family="Inter,Arial,sans-serif" font-size="12" fill="#8ca1b2">NEXT →</text>
+          </svg>
+          <div class="visual-bottom"><span>模型能力 ≠ 主体就绪度</span><span>CONCEPTUAL · NOT REAL DATA</span></div>
+        </div>
       </div>
-    </form>
-    <section class="results" id="results" aria-live="polite">
-      <div class="result-empty"><span class="section-tag">YOUR RESULTS</span><h2>Ready to measure your gap?</h2><p>完成上面的量化指标和任务检查后，报告将在这里生成。我们不会虚构缺失分数或同类排名。</p></div>
     </section>
-    <footer class="footer">
-      <div><strong>ReadyGap</strong><p>Measure the readiness of the entity, not the intelligence of the model.</p></div>
-      <div><a href="../../framework/MEASUREMENT_MODEL.md">测量模型</a><a href="../../items/INDICATOR_REGISTER.md">指标定义</a><a href="../../scoring/SCORING_SPEC.md">评分规则</a><a href="https://github.com/liuh886/ReadyGap">Source ↗</a></div>
-      <p class="footnote">Experimental and self-reported. No certification, percentile, ROI forecast or evidence verification. MIT licensed.</p>
-    </footer>
+
+    <section class="main-container thesis-section" id="thesis" aria-labelledby="thesis-title">
+      <div class="section-marker"><span>01 / THE IDEA</span><span>研究命题</span></div>
+      <div class="thesis-grid">
+        <div>
+          <h2 id="thesis-title">问题不只是<br/>AI <em>有多强。</em></h2>
+          <p class="large-copy">一家企业可以订阅最先进的模型，却仍然无法让 AI 读取必要资料、通过系统完成任务，或验证最终结果。</p>
+        </div>
+        <div class="thesis-detail">
+          <div class="manifesto"><span class="quote-symbol" aria-hidden="true">“</span><p>Measure the readiness of the entity, <em>not the intelligence of the model.</em></p></div>
+          <p>AI 技术能力的增长，与一个主体吸收、整合和利用 AI 的能力，是两个不同的改进变量。</p>
+          <p>ReadyGap 关注后者：从个人、团队到部门和企业，究竟有哪些现实条件，让模型能力可以转化为可靠、有价值的行动？</p>
+          <a class="text-link" href="../../framework/THESIS.md">阅读完整研究命题 <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="distinction-bar" aria-label="三个不同概念">
+        <div><small>01</small><strong>AI Readiness</strong><span>具备什么条件</span></div>
+        <div class="not-equal" aria-hidden="true">≠</div>
+        <div><small>02</small><strong>AI Adoption</strong><span>实际如何采用</span></div>
+        <div class="not-equal" aria-hidden="true">≠</div>
+        <div><small>03</small><strong>AI Value</strong><span>真正创造什么价值</span></div>
+      </div>
+    </section>
+
+    <section class="contrast-section" aria-labelledby="contrast-title">
+      <div class="main-container contrast-inner">
+        <div class="section-marker light"><span>02 / A DIFFERENT QUESTION</span><span>评估方向反转</span></div>
+        <h2 id="contrast-title">不要只问：<br/><span>“我们有没有 AI 战略？”</span></h2>
+        <p>我们更想问一个具体得多、也更有挑战性的问题：</p>
+        <blockquote>如果今天有一个足够强的 AI Agent，<br/>它能在你的实际工作中<strong>做成什么？</strong><br/>又会在哪里<strong>被卡住？</strong></blockquote>
+        <div class="contrast-notes">
+          <span>知识能否被理解？</span><span>工具是否获授权？</span><span>流程能否衔接？</span><span>结果是否可验证？</span><span>错误能否恢复？</span>
+        </div>
+        <p class="caveat">这是用于发现障碍的思想实验，不意味着所有任务都应该自动化或交给自主 Agent。</p>
+      </div>
+    </section>
+
+    <section class="main-container signals-section" id="signals" aria-labelledby="signals-title">
+      <div class="section-marker"><span>03 / UNEXPECTED SIGNALS</span><span>新的观察视角</span></div>
+      <div class="signals-heading">
+        <div><h2 id="signals-title">真正的阻碍，<br/>可能藏在这些细节里。</h2></div>
+        <p>不要从“拥有多少 AI 资源”开始。试着观察一次真实工作，在 AI 接手之前、运行之中和出错之后，究竟发生了什么。</p>
+      </div>
+      <div class="signal-grid">
+        <article class="signal-card featured">
+          <div class="signal-top"><span>01 / CONTEXT</span><span aria-hidden="true">↗</span></div>
+          <div class="signal-symbol context-symbol" aria-hidden="true"><span>?</span><i></i><i></i></div>
+          <h3>Context Reconstruction Cost</h3>
+          <h4>情境重建成本</h4>
+          <p>模型很快给出答案，但你花了多久才能让它理解背景、限制条件和真正的任务？</p>
+          <div class="signal-measure">观察单位 <strong>人工准备分钟 / 任务</strong></div>
+        </article>
+        <article class="signal-card">
+          <div class="signal-top"><span>02 / RELIABILITY</span><span aria-hidden="true">↗</span></div>
+          <div class="signal-icon" aria-hidden="true">↺</div>
+          <h3>Human Rescue Rate</h3>
+          <h4>人工救援率</h4>
+          <p>多少次 AI 尝试在预定交接之外，需要人临时补充信息、纠偏或接管才能继续？</p>
+          <div class="signal-measure">观察单位 <strong>非计划救援的尝试 / 总尝试</strong></div>
+        </article>
+        <article class="signal-card">
+          <div class="signal-top"><span>03 / TRANSFER</span><span aria-hidden="true">↗</span></div>
+          <div class="signal-icon" aria-hidden="true">⇄</div>
+          <h3>Cold-start Transfer</h3>
+          <h4>冷启动可移交性</h4>
+          <p>换一位不熟悉流程的人，使用同样的知识与 AI，能否仍然完成工作？</p>
+          <div class="signal-measure">观察单位 <strong>新接手者验收通过率</strong></div>
+        </article>
+        <article class="signal-card">
+          <div class="signal-top"><span>04 / ABSORPTION</span><span aria-hidden="true">↗</span></div>
+          <div class="signal-icon" aria-hidden="true">↑</div>
+          <h3>Model Upgrade Capture</h3>
+          <h4>模型进步吸收能力</h4>
+          <p>模型升级了，同样的业务流程能获得多少实际改善？还是瓶颈仍然存在？</p>
+          <div class="signal-measure">观察单位 <strong>固定任务集的前后表现</strong></div>
+        </article>
+        <article class="signal-card">
+          <div class="signal-top"><span>05 / RESILIENCE</span><span aria-hidden="true">↗</span></div>
+          <div class="signal-icon" aria-hidden="true">⟲</div>
+          <h3>Recovery Cost</h3>
+          <h4>错误恢复成本</h4>
+          <p>AI 出错之后，要花多少额外时间发现、纠正并把任务恢复到可接受的状态？</p>
+          <div class="signal-measure">观察单位 <strong>按错误严重度记录恢复时间</strong></div>
+        </article>
+        <article class="signal-card signal-closing">
+          <div class="signal-top"><span>THE REAL QUESTION</span><span aria-hidden="true">✳</span></div>
+          <h3>Measure the friction.<br/><em>Find the unlock.</em></h3>
+          <p>一个有价值的指标，不只是生成一个数字，更应该让你看清楚下一步能够改变什么。</p>
+          <a href="../../items/CREATIVE_METRICS_LAB.md">探索全部创意指标 <span aria-hidden="true">↗</span></a>
+        </article>
+      </div>
+      <p class="disclaimer">这些是正在探索的候选指标与观察方法，尚未经过科学校准，也尚未全部进入公开评分算法。</p>
+    </section>
+
+    <section class="measure-section" id="measure" aria-labelledby="measure-title">
+      <div class="main-container">
+        <div class="section-marker"><span>04 / TWO LENSES</span><span>双指标 · 两个问题</span></div>
+        <div class="measure-header">
+          <h2 id="measure-title">一个分数，<br/>还不够。</h2>
+          <p>组织可能具有很好的 AI 基础，却没有任何一项关键任务真正准备好运行。因此，我们把<strong>主体能力</strong>与<strong>活动运行准备</strong>分开观察。</p>
+        </div>
+        <div class="measure-grid">
+          <article class="measure-card">
+            <div class="measure-card-kicker">01 / ENTITY CAPABILITY</div>
+            <div class="measure-title"><h3>ReadyScore</h3><span>0—100</span></div>
+            <p>你已经具备多少与 AI 融合的基础能力？</p>
+            <div class="measure-lines" aria-hidden="true"><span style="width:79%"></span><span style="width:56%"></span><span style="width:86%"></span><span style="width:61%"></span></div>
+            <small>覆盖任务、知识、工具、协作、控制与学习能力。</small>
+          </article>
+          <article class="measure-card dark">
+            <div class="measure-card-kicker">02 / WORKFLOW READINESS</div>
+            <div class="measure-title"><h3>Ready Coverage</h3><span>0—100%</span></div>
+            <p>在适合 AI 的工作中，多少已经通过必要条件检查和代表性试运行？</p>
+            <div class="coverage-mark" aria-hidden="true"><span class="filled"></span><span class="filled"></span><span></span><span></span><span></span></div>
+            <small>缺少一项关键权限、验收或监督条件，就不能用其他高分抵消。</small>
+          </article>
+        </div>
+        <p class="measure-footnote">数值是量表范围，图形为装饰性示意，不代表任何已测量主体。现有公开测评为实验性自评，不提供经过验证的全球排名或安全认证。</p>
+      </div>
+    </section>
+
+    <section class="main-container audience-section">
+      <div class="section-marker"><span>05 / FOR EVERY ENTITY</span><span>通用主体</span></div>
+      <div class="audience-grid">
+        <h2>从一个人，<br/>到整个组织。</h2>
+        <div class="audience-detail">
+          <p>ReadyGap 不以企业规模或 AI 投入金额定义先进程度。一个人不需要企业级系统，一个部门也不必为了获得高分而追求不必要的自动化。</p>
+          <div class="audience-pills"><span>个人</span><span>小团队</span><span>部门</span><span>公司</span><span>集团</span><span>其他组织</span></div>
+          <p class="quiet">同一套概念可以跨主体使用，但不同主体的分数尚不能未经校准就直接排名比较。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta" aria-labelledby="cta-title">
+      <div class="main-container cta-grid">
+        <div>
+          <div class="eyebrow">OPEN FRAMEWORK · OPEN QUESTIONS</div>
+          <h2 id="cta-title">The next AI breakthrough<br/>might be <em>inside us.</em></h2>
+          <p>有时，我们缺少的不是更强的模型，而是让现有模型真正理解、参与和完成工作的条件。</p>
+          <div class="final-actions">
+            <a class="button button-dark" href="./assessment.html">体验测评原型 <span aria-hidden="true">↗</span></a>
+            <a class="button button-text" href="https://github.com/liuh886/ReadyGap" target="_blank" rel="noopener noreferrer">参与开源项目 <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <aside class="cta-aside">
+          <span>READYGAP / U-ARI</span>
+          <p>Assess.<br/>Understand.<br/><strong>Improve.</strong></p>
+          <small>先看到差距，再缩小差距。</small>
+        </aside>
+      </div>
+    </section>
   </main>
+  <footer class="site-footer">
+    <div class="main-container footer-inner">
+      <div class="footer-brand"><a class="logo" href="./"><span class="logo-emblem" aria-hidden="true">R<span>.</span></span> ReadyGap</a><p>Measure the readiness of the entity, not the intelligence of the model.</p></div>
+      <nav aria-label="页脚导航"><a href="./assessment.html">Assessment</a><a href="../../framework/THESIS.md">Thesis</a><a href="../../items/CREATIVE_METRICS_LAB.md">Metrics Lab</a><a href="https://github.com/liuh886/ReadyGap">GitHub</a></nav>
+      <p class="copyright">© 2026 ReadyGap · Open-source experimental project. No certification or verified global benchmark. MIT License.</p>
+    </div>
+  </footer>
 </body>
 </html>

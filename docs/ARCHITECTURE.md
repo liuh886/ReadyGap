@@ -1,6 +1,6 @@
 # Architecture — Concepts, Items, Scoring, Validation, Benchmarks and Web
 
-The site is a **consumer** of a measurement contract, not the source of truth for its questions. Avoid copying the same definitions into multiple unlinked files.
+The public homepage is a **manifesto and product introduction**, not the detailed instrument. The separate assessment route is a **consumer** of a measurement contract, not the source of truth for its questions. Avoid copying the same definitions into multiple unlinked files.
 
 \`\`\`text
 ReadyGap/
@@ -21,9 +21,11 @@ ReadyGap/
 │   └── README.md
 ├── apps/
 │   └── web/               # static UI only; imports the scoring engine
-│       ├── index.html
-│       ├── styles.css
-│       └── app.mjs
+│       ├── index.html      # concept-first homepage; no questionnaire
+│       ├── landing.css     # homepage only
+│       ├── assessment.html # distinct experimental assessment route
+│       ├── styles.css      # questionnaire styling
+│       └── app.mjs         # assessment UI only
 ├── docs/                  # product boundaries, architecture, roadmap
 │   ├── PRODUCT_CHARTER.md
 │   ├── ARCHITECTURE.md
@@ -52,14 +54,14 @@ Do not move scoring weights or definitions into the UI. App-specific wording may
 
 ## Current run / deployment
 
-Serve the **repository root** (not apps/web in isolation) over HTTP so web imports to \`../../scoring/engine.mjs\` and fetches \`../../items/*.json\` are on the same origin:
+Serve the **repository root** (not apps/web in isolation) over HTTP; the homepage links to assessment.html, whose imports to \`../../scoring/engine.mjs\` and fetches \`../../items/*.json\` are on the same origin:
 
 \`\`\`sh
 python3 -m http.server 8000
 # http://localhost:8000 redirects to /apps/web/
 \`\`\`
 
-A GitHub Pages deployment sourced from the repository root can serve the root launcher. CI runs Node unit and contract tests; automated browser visual QA has **not** been performed.
+A GitHub Pages deployment sourced from the repository root can serve the root launcher. CI runs Node unit, contract and static route tests; automated browser visual QA has **not** been performed. The prototype contains no external font imports or browser analytics.
 
 Do not create a fake global dataset: \`benchmarks/\` currently holds policy only. Future datasets must have provenance, informed consent, de-identification and documented sampling/measurement equivalence.
 

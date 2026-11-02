@@ -60,7 +60,7 @@ Scores describe the **declared scope, period and evidence state**. They are not 
 
 We intentionally separate the research logic from item definitions, numerical code and user experience.
 
-\`\`\`text
+```text
 framework/       Research thesis, construct, assessment principles
 items/           Canonical indicators, gate criteria, machine-readable definitions
 scoring/         Pure deterministic scoring engine and calculation specification
@@ -70,26 +70,36 @@ apps/web/        No-login, Chinese-first static assessment website
 docs/            Product charter, architecture and execution roadmap
 tests/           Unit and measurement-contract tests
 index.html       Tiny static-site redirect to apps/web/
-\`\`\`
+```
 
 See [full architecture and dependency rules](docs/ARCHITECTURE.md).
+
+## Experience: concept-first homepage
+
+**The homepage is not the 12-item questionnaire.** It introduces the research thesis, a conceptual diagram of the model frontier vs entity readiness, five counterintuitive field signals, and the two-score idea. Visitors then opt into an **independent assessment page**.
+
+- **[Landing page](apps/web/index.html)** — public-facing story and the idea behind ReadyGap.
+- **[Assessment prototype](apps/web/assessment.html)** — separate, explicitly experimental numerical form, backed by the existing scoring engine.
+- **[Landing CSS](apps/web/landing.css)** — presentation layer separate from the existing form CSS, not part of the measurement method.
+
+**Featured exploratory signals:** Context Reconstruction Cost, Human Rescue Rate, Cold-start Transfer, Model Upgrade Capture and Recovery Cost. These are research candidates, **not** extra inputs or weights in ReadyScore.
 
 ## Try the website (experimental)
 
 Serve the **repository root** (necessary for cross-directory imports):
 
-\`\`\`sh
+```sh
 python3 -m http.server 8000
 # open http://localhost:8000
-\`\`\`
+```
 
-No installation or backend is required. The site makes no external API calls, has no telemetry, and keeps entered data in page memory; only a deliberately copied **aggregate** summary may be shared. No server-side evidence verification or persistent results exist.
+No installation or backend is required. **The root page is the concept-first homepage**; the questionnaire is at `/apps/web/assessment.html`. The site makes no external API or font requests, has no telemetry, and keeps assessment inputs in page memory; only a deliberately copied **aggregate** summary may be shared. No server-side evidence verification or persistent results exist.
 
 Run regression tests with Node.js 20+:
 
-\`\`\`sh
+```sh
 node --test tests/*.test.mjs
-\`\`\`
+```
 
 The code is ready for hosting from the repo root as static files, but **public deployment and browser QA must be verified separately**.
 
@@ -99,7 +109,7 @@ The code is ready for hosting from the repo root as static files, but **public d
 2. [Measurement model](framework/MEASUREMENT_MODEL.md) — precisely *what* is measured, and what is excluded.
 3. [Design principles](framework/DESIGN_PRINCIPLES.md) — how to turn an indicator into a meaningful action.
 4. [Indicator register](items/INDICATOR_REGISTER.md) — the twelve current candidate metric contracts (not final).
-5. [Creative metrics lab](items/CREATIVE_METRICS_LAB.md) — 24 unconventional candidate ideas; not in scoring.
+5. [Creative metrics lab](items/CREATIVE_METRICS_LAB.md) — 25 unconventional candidate ideas; not in scoring.
 6. [Fast field pilots](validation/FAST_PILOTS.md) — how to explore candidate value before validation.
 7. [Scoring protocol](scoring/SCORING_SPEC.md) — numeric formulae, missingness and gates.
 8. [Validation plan](validation/VALIDATION_PLAN.md) — how to test, falsify and improve the instrument.
