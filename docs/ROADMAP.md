@@ -1,35 +1,50 @@
-# Roadmap — distribution first, measurement disciplined
+# Roadmap — Spread first, validate rigorously
 
-## v0.1 — foundation and working preview (this PR)
+**North star:** a widely shareable open AI Readiness assessment that can answer **what capabilities exist, which eligible activities are pilot-ready, why others are blocked, and what specific next action can be verified**.
 
-- [x] Public product charter and differentiation statement
-- [x] Five-question indicator contract + 12 versioned definitions
-- [x] Two genuinely separate measurement inputs: capability inventory and task gates
-- [x] Deterministic scoring engine, input checks and unit tests
-- [x] Static, bilingual-friendly Chinese-first prototype with no login, no telemetry
-- [x] Traceable unknowns, non-applicable, evidence modes and risk caveats
-- [ ] Qualitative review of all 12 constructs with external readers
-- [ ] Cognitive pretest of questionnaire across person/team/organization
+The public brand is ReadyGap; the proposed general measurement framework is U-ARI. It is not a statistically calibrated global index yet.
 
-## v0.2 — shareable assessment, fast iteration
+## PR #1 / v0.1 — theoretical foundation + runnable preview
 
-- [ ] Refine task selection to avoid cherry-picking (screen inventory before selecting representative tasks)
-- [ ] Shorten questionnaire using validated skips without making dimensions unreportable
-- [ ] Save and export versioned reports locally, explicit opt-in share cards, accessible responsive interface
-- [ ] Complete English localization and ensure examples fit individual and organizational users
-- [ ] Review domain & register consistency; add checks for denominator manipulation
-- [ ] Add optional gross opportunity calculator clearly separate from realized outcomes
+- [x] Research thesis in Chinese and English; two distinct intervention variables, adoption/readiness/value separation
+- [x] Formalize three judgments: focus on adopting entity, fit-for-purpose rather than maximize score, actionable gaps rather than vanity score
+- [x] Activity-first and strong-agent diagnostic thought experiment with safety caveats
+- [x] Separate framework, items, scoring, validation, benchmarks, apps/web, docs and tests
+- [x] Five-question contract + twelve candidate indicator definitions
+- [x] Two scoring layers: ReadyScore entity capabilities; Ready Coverage operational trials
+- [x] Deterministic scoring, input checks, contract/unit tests and GitHub CI
+- [x] Chinese-first static website, no login or telemetry, aggregate-only manual sharing
+- [ ] External qualitative review of construct and twelve metrics
+- [ ] Cognitive pretests with individuals, teams, departments and organizations
+- [ ] Browser accessibility, mobile and deployment verification (not yet claimed)
 
-## v0.3 — research-backed differentiation
+## v0.2 — shareable public experience and meaningful task sampling
 
-- [ ] Evidence upload or local verification only after privacy/security review
-- [ ] Pilot multiple entity types and sectors; calibration and external criteria
-- [ ] Measure added prediction and decision value vs baseline checklist
-- [ ] Formal score sensitivity, comparability and methods publication
-- [ ] Optional specialized modules (high-risk, regulated, workflow automation)
+- [ ] Deploy a reviewed static site with easy-to-share versioned report/card (opt-in only)
+- [ ] Make a **pre-scored activity inventory** and documented AI-eligibility screening to curb cherry-picking
+- [ ] Provide understandable examples of numerator, denominator and evidence for each entity type
+- [ ] Shorten time-to-result using empirically tested skip logic, without inventing N/A conditions
+- [ ] Add at least one concrete activity-level next-step recommendation and optional effort weighting
+- [ ] Full English/Chinese localization and responsive accessibility testing
+- [ ] Record assessment scope, item/scoring versions and repeat-measurement comparisons
+- [ ] Optional gross opportunity calculator; keep net value **outside** readiness metrics
 
-## Not until validated
+## v0.3 — measurement validation and differentiation
 
-Public rankings, "top X%" percentile, certification marks, financial ROI prediction, or autonomous agent safety approval.
+- [ ] Independently review indicator necessity and domain coverage; revise construct where evidence demands
+- [ ] Test inter-rater agreement, test–retest reliability and observed-vs-reported differences
+- [ ] Measure entity-type / language equivalence and sampling sensitivities
+- [ ] Track 30–90 day task success, quality, safety, net time and value separately
+- [ ] Compare predictive/decision utility against simpler enterprise maturity and strategy checklists
+- [ ] Publish methods, version links, limitations and sensitivity reports
+- [ ] Consider optional sector-specific and higher-risk modules
 
-**Execution principle:** prioritize new functionality and coherent structure over defensive patchwork; run targeted tests for each meaningful change and broader test suites when versions stabilize.
+## Future: benchmarks, not synthetic rankings
+
+- [ ] Only with consented, representative, reviewed data, consider peer distributions
+- [ ] Do not equate percentiles across people, teams and companies absent proven measurement comparability
+- [ ] Maintain item and scale linking as model capabilities and workflows evolve
+
+**Execution principle:** build product functionality and coherent structure first. Run targeted tests for concrete changes; reserve broader validation campaigns for meaningful releases and research claims.
+
+See [Architecture](ARCHITECTURE.md), [Measurement Model](../framework/MEASUREMENT_MODEL.md), and [Validation Plan](../validation/VALIDATION_PLAN.md).

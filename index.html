@@ -1,75 +1,8 @@
 <!doctype html>
 <html lang="zh-CN">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="description" content="ReadyGap — an open, experimental assessment of AI readiness, task coverage and actionable operational bottlenecks."/>
-  <title>ReadyGap — Know your readiness. Unlock your potential.</title>
-  <link rel="stylesheet" href="./styles.css"/>
-  <script type="module" src="./src/app.mjs"></script>
-</head>
-<body>
-  <header class="topbar">
-    <a class="brand" href="#top" aria-label="ReadyGap 首页"><span class="brandmark">R<span class="dot">.</span></span> ReadyGap</a>
-    <nav aria-label="页面导航"><a href="#method">方法</a><a href="#capability">能力量表</a><a href="#tasks">任务检验</a><a href="https://github.com/liuh886/ReadyGap" target="_blank" rel="noopener">GitHub ↗</a></nav>
-  </header>
-  <main id="top">
-    <section class="hero">
-      <div class="eyebrow"><span class="status-dot"></span> OPEN ASSESSMENT · EXPERIMENTAL V0.1</div>
-      <h1>AI is advancing.<br><em>Are you ready?</em></h1>
-      <p class="lede">模型的能力在进步，但你真正具备多少利用 AI 的条件？哪些工作已经准备好进入试点？又是什么限制了下一步？</p>
-      <div class="hero-chips"><span>个人 · 团队 · 部门 · 组织</span><span>双指标量化</span><span>不登录 · 不上传</span></div>
-      <a href="#capability" class="primary-link">开始评估 <span aria-hidden="true">↗</span></a>
-    </section>
-    <section class="score-intro" aria-label="两个核心指标">
-      <article class="intro-card"><div class="mini-kicker">01 / ENTITY</div><h2>ReadyScore <span>0–100</span></h2><p>测量主体是否具有将 AI 用于实际活动的基础能力。六大维度，12 个可计量指标。</p></article>
-      <article class="intro-card"><div class="mini-kicker">02 / WORKFLOW</div><h2>Ready Coverage <span>0–100%</span></h2><p>在已筛选的 AI 适用活动中，有多少已经通过必要条件检查和代表性试运行。</p></article>
-    </section>
-    <section class="method-strip" id="method">
-      <div><span class="step">MEASURE</span><strong>先定义可观察能力</strong><small>What / Why</small></div>
-      <div class="arrow">→</div>
-      <div><span class="step">VERIFY</span><strong>再确定分子、分母、证据</strong><small>Number / Evidence</small></div>
-      <div class="arrow">→</div>
-      <div><span class="step">IMPROVE</span><strong>最后找到可以改变的约束</strong><small>Action</small></div>
-    </section>
-    <form id="assessment" novalidate>
-      <section class="section-block" id="capability">
-        <div class="section-header"><div><span class="section-tag">PART 01 · CAPABILITY</span><h2>主体能力测量</h2><p>按最近 30 天、一个明确范围统计。每项填入满足条件的数量和适用总数；未掌握的数据可以留空，确实不适用时填写 0/0。</p></div><span class="section-counter">12 METRICS</span></div>
-        <div class="panel scope-panel">
-          <label for="subject">评估主体</label>
-          <select id="subject" name="subject">
-            <option value="individual">个人 Individual</option>
-            <option value="team">团队 Team</option>
-            <option value="department">部门 Department</option>
-            <option value="company">企业 Company</option>
-            <option value="group">集团 Group</option>
-            <option value="other">其他主体 Other</option>
-          </select>
-          <label for="scope">评估范围（可选，不会进入公开分享文本）</label>
-          <input id="scope" placeholder="例如：我的每周工作 / 某部门 30 天重复性业务"/>
-          <p class="note">请不要只选择已经成功使用 AI 的任务。个人自评不能自动代表整个公司的真实状况。</p>
-        </div>
-        <div id="indicator-list" class="indicator-list"><p class="subtle">正在加载指标定义……</p></div>
-      </section>
-      <section class="section-block" id="tasks">
-        <div class="section-header"><div><span class="section-tag">PART 02 · WORKFLOW</span><h2>任务运行条件</h2><p>从事先确定的活动清单中选取有代表性的任务；建议至少 3 项。每项先判断是否适合 AI，再逐项检查必要条件。</p></div><span class="section-counter">6 GATES + TRIAL</span></div>
-        <div class="scope-warning">只有全部必要条件通过、风险类别为常规且有通过记录的代表性试运行，任务才计入 <strong>Ready Coverage</strong>。高风险任务不能在本站获得安全认证。</div>
-        <div id="task-list"></div>
-        <button id="add-task" class="secondary-btn" type="button">＋ 添加一项活动</button>
-      </section>
-      <div class="submit-row">
-        <p class="note">所有计算在当前浏览器完成。请勿输入敏感信息；本页面不保存个人或组织数据。</p>
-        <button class="main-btn" type="submit">计算 ReadyGap 报告 <span>→</span></button>
-      </div>
-    </form>
-    <section class="results" id="results" aria-live="polite">
-      <div class="result-empty"><span class="section-tag">YOUR RESULTS</span><h2>Ready to measure your gap?</h2><p>完成上面的量化指标和任务检查后，报告将在这里生成。我们不会虚构缺失分数或同类排名。</p></div>
-    </section>
-    <footer class="footer">
-      <div><strong>ReadyGap</strong><p>Measure the readiness of the entity, not the intelligence of the model.</p></div>
-      <div><a href="./docs/MEASUREMENT_MODEL.md">测量模型</a><a href="./docs/INDICATOR_REGISTER.md">指标定义</a><a href="./docs/SCORING_SPEC.md">评分规则</a><a href="https://github.com/liuh886/ReadyGap">Source ↗</a></div>
-      <p class="footnote">Experimental and self-reported. No certification, percentile, ROI forecast or evidence verification. MIT licensed.</p>
-    </footer>
-  </main>
-</body>
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta http-equiv="refresh" content="0; url=./apps/web/"/>
+<title>ReadyGap — AI Readiness Assessment</title>
+<link rel="canonical" href="./apps/web/"/></head>
+<body><p>ReadyGap 已迁移至 <a href="./apps/web/">AI Readiness 测评网站</a>。</p></body>
 </html>

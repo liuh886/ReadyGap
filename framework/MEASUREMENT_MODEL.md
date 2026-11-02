@@ -1,5 +1,13 @@
 # Measurement Model — Construct First
 
+**Governing argument:** [THESIS.md](THESIS.md) · **Design contract:** [DESIGN_PRINCIPLES.md](DESIGN_PRINCIPLES.md).
+
+The assessment begins with **the adopting entity's actual activities**, not a catalogue of how much AI it purchases. The strong-Agent question—*what could an adequately capable agent do, and where would this entity block it?*—is a **diagnostic stress test**, not a recommendation for unrestricted autonomous execution.
+
+**AI Adoption ≠ AI Readiness ≠ AI Value Realization.** Model capability and entity capability are different **intervention levers**, not statistically independent variables by definition. The index targets the latter and evaluates actual outcomes separately.
+
+**Fit for purpose:** the highest score is not necessarily the right goal. Excessive tools, bureaucracy, autonomy or data infrastructure can cost more than the task warrants.
+
 ## 1. Construct definition
 
 **Entity AI Readiness** is the degree to which a defined person or coordinated actor has **accessible capabilities, context, operating arrangements, safeguards and capacity to learn** that are necessary for **effective, responsible integration** of *available* AI into its **own eligible activities**.
@@ -34,6 +42,8 @@ The two measurements are related conceptually and may correlate. No assertion of
 These are **provisional formative dimensions**, not empirically demonstrated factors. High internal consistency is not a prerequisite for a composite of heterogeneous necessary capabilities.
 
 ## 4. The five-question indicator design contract
+
+Related candidate items: [Indicator Register](../items/INDICATOR_REGISTER.md). Score arithmetic is defined separately in the [Scoring Specification](../scoring/SCORING_SPEC.md).
 
 Every indicator must document:
 

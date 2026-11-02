@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { scoreIndicators, scoreTasks } from "../src/scoring.mjs";
+import { scoreIndicators, scoreTasks } from "../scoring/engine.mjs";
 
 const domains = Array.from({length:6}, (_,i)=>({id:"D"+(i+1),title_zh:"domain "+(i+1)}));
 const indicators = domains.flatMap(d=>[1,2].map(k=>({id:d.id+"-"+k,domain_id:d.id})));

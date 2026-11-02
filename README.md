@@ -1,55 +1,100 @@
 # ReadyGap
 
-**Measure your readiness. Close the gap.**  
-An open, model-independent assessment of how well a person, team, department, company or other entity is prepared to put AI to work.
+**Know your readiness. Unlock your potential.**  
+**Measure the readiness of the entity, not the intelligence of the model.**  
+测量主体的就绪度，而不是模型的智能水平。
 
-> **Status: v0.1 experimental prototype.** This is not a validated psychometric scale, an official certification, a prediction of ROI, or an AI-safety approval.
+> **Status: experimental v0.1 · Draft PR.** ReadyGap is an open-source, model-independent **AI Readiness** assessment for individuals, teams, departments, companies and other entities. Its scores are not yet validated global benchmarks, certifications, or ROI forecasts.
 
-## Why
+## Why ReadyGap / 为什么做？
 
-Improving foundation-model capability does not automatically make people and organizations better at integrating AI into real activities. ReadyGap separates:
+今天有那么多榜单和标准评估大模型推理能力的进步，却少有人持续追问：**我们的个人、部门与组织，是否真正准备好适应这些 AI 能力？**
 
-- **ReadyScore (0–100):** self-reported, numerically specified *entity capabilities* across six domains.
-- **Ready Coverage (0–100%):** the fraction of screened, AI-eligible activities meeting all non-compensatory readiness gates **and** passing a documented trial. The denominator and sample caveats are shown.
-- **Outcomes:** measured changes in time, quality, cost and risk. **Not** included in either readiness score.
+我们判断，基础模型进步和主体吸收、整合、应用 AI 的能力是**两个可以分别改善的变量**。它们并非假设在统计上完全独立，但它们的约束机制不同；订阅 API 不等于业务流程已经 AI Ready。
 
-Unlike a procurement checklist or a general maturity label, ReadyGap asks what is missing, for which activity, and what change would unlock a meaningful next test.
+> **As foundation models become increasingly capable and accessible, an organization's ability to absorb, operationalize, and govern AI becomes a critical determinant of realized value.**
 
-## Start the experimental website
+随着基础模型能力持续增长并日益普及，组织吸收、运行和治理 AI 的能力，正成为决定 AI 能否真正创造价值的关键因素。研究对象也包括个人及其他主体。
 
-No install or build required. Serve the repository root over HTTP:
+**AI Adoption ≠ AI Readiness ≠ AI Value Realization.**
 
-```sh
+- **Readiness** — a capability and operational-condition assessment made **before** observing realized value.
+- **Adoption** — actual AI usage behavior, which can be shallow, unreliable or merely experimental.
+- **Value** — observed net changes in time, quality, cost, risk or other objectives; evaluated **separately**.
+
+**Read the [Research Thesis / 核心研究命题](framework/THESIS.md)** for the argument, three positioning judgments, the strong-Agent stress test and falsifiable research questions.
+
+## Reverse the direction of assessment / 从真实活动出发
+
+Rather than only asking "Do you have an AI strategy, a knowledge base or staff training?", ReadyGap also asks:
+
+> **If an adequately capable AI agent were available today, what could this entity actually let it do, and exactly where would it be blocked?**
+
+如果今天给一个主体能力足够强的 AI Agent，它究竟能做什么，又会在哪里被卡住？
+
+This is a **diagnostic thought experiment**, not an assumption that every task ought to be automated. The work of the entity—its actual activities, contextual knowledge, authorized tools, handoffs, evaluation and oversight—supplies the unit of diagnosis.
+
+**More AI spending is not necessarily more readiness.** Small, low-risk actors can be appropriately ready without expensive platforms, autonomous agents or heavyweight governance. The aim is **fit-for-purpose capability** and the **next controllable improvement**, not maximizing an arbitrary number.
+
+## Two measures, kept distinct
+
+| Measure | Unit and meaning | Operational rule |
+| --- | --- | --- |
+| **ReadyScore (0–100)** | **Entity-level** capability profile: six domains, twelve proposed numerical indicators | Explicit numerator/denominator for each indicator; full score only when minimum evidence coverage is met |
+| **Ready Coverage (0–100%)** | **Activity-level** confirmed pilot-readiness among sampled, screened AI-eligible activities | All six non-compensatory gates must pass **and** a representative routine-risk trial must pass |
+| **Outcomes (separate)** | Future observed net time, cost, quality, risk and other value | Never included in either readiness score |
+
+Every proposed indicator must answer **What is measured? Why necessary? How quantified? How verified? What specific action changes it?** See [design principles](framework/DESIGN_PRINCIPLES.md) and the [indicator register](items/INDICATOR_REGISTER.md).
+
+Scores describe the **declared scope, period and evidence state**. They are not population percentiles or reliable comparisons between persons and whole companies. Report unknowns, N/A, risk exceptions and sample size. **High scores are not AI-safety approvals.**
+
+## Project architecture
+
+We intentionally separate the research logic from item definitions, numerical code and user experience.
+
+\`\`\`text
+framework/       Research thesis, construct, assessment principles
+items/           Canonical indicators, gate criteria, machine-readable definitions
+scoring/         Pure deterministic scoring engine and calculation specification
+validation/      Reliability, validity, comparability and prospective tests
+benchmarks/      Data policy (no invented global reference datasets)
+apps/web/        No-login, Chinese-first static assessment website
+docs/            Product charter, architecture and execution roadmap
+tests/           Unit and measurement-contract tests
+index.html       Tiny static-site redirect to apps/web/
+\`\`\`
+
+See [full architecture and dependency rules](docs/ARCHITECTURE.md).
+
+## Try the website (experimental)
+
+Serve the **repository root** (necessary for cross-directory imports):
+
+\`\`\`sh
 python3 -m http.server 8000
 # open http://localhost:8000
-```
+\`\`\`
 
-The scoring core requires only JavaScript. Run offline tests with Node.js 20+:
+No installation or backend is required. The site makes no external API calls, has no telemetry, and keeps entered data in page memory; only a deliberately copied **aggregate** summary may be shared. No server-side evidence verification or persistent results exist.
 
-```sh
+Run regression tests with Node.js 20+:
+
+\`\`\`sh
 node --test tests/*.test.mjs
-```
+\`\`\`
 
-The page makes no external requests. No account, analytics, or back-end storage are included. Evaluation inputs remain in browser memory unless a user explicitly copies an aggregate result. GitHub Pages can host this static prototype when deployment is explicitly configured.
+The code is ready for hosting from the repo root as static files, but **public deployment and browser QA must be verified separately**.
 
-## Start with the measurement contract
+## Start here
 
-1. [Product charter](docs/PRODUCT_CHARTER.md) — what this project is and is not.
-2. [Measurement model](docs/MEASUREMENT_MODEL.md) — construct, logical chain, and the five tests for every indicator.
-3. [Indicator register](docs/INDICATOR_REGISTER.md) — twelve proposed measurable indicators: what, why, quantification, evidence, action.
-4. [Scoring protocol](docs/SCORING_SPEC.md) — denominators, unknowns, eligibility, gates and formulae.
-5. [Validation plan](docs/VALIDATION_PLAN.md) — how we will test whether this beats simpler assessment.
-6. [Roadmap](docs/ROADMAP.md) — fast product execution without premature certification claims.
+1. [Thesis / 研究命题](framework/THESIS.md) — *why* the measurement matters.
+2. [Measurement model](framework/MEASUREMENT_MODEL.md) — precisely *what* is measured, and what is excluded.
+3. [Design principles](framework/DESIGN_PRINCIPLES.md) — how to turn an indicator into a meaningful action.
+4. [Indicator register](items/INDICATOR_REGISTER.md) — all twelve proposed metric contracts.
+5. [Scoring protocol](scoring/SCORING_SPEC.md) — numeric formulae, missingness and gates.
+6. [Validation plan](validation/VALIDATION_PLAN.md) — how to test, falsify and improve the instrument.
+7. [Roadmap](docs/ROADMAP.md) — practical release stages.
 
-Machine-readable definitions live in [data/indicators.json](data/indicators.json) and [data/gates.json](data/gates.json). The pure scoring engine lives in [src/scoring.mjs](src/scoring.mjs).
+**Contribution rule:** describe the construct before creating an indicator, keep the scoring engine outside the UI, and never call an unvalidated self-reported score a global AI readiness ranking.
 
-## Contribution principles
-
-- Describe the **construct** before writing questions or choosing weights.
-- Each proposed indicator must answer: *what is measured, why necessary, numerical rule, verification, action resulting from a change*.
-- Do not equate paying for an API with readiness, or readiness with realized value.
-- Never treat missing evidence as a score of zero. Separate **unknown**, **not applicable**, **failed**, and **verified**.
-- Do not rank people against groups or companies on an uncalibrated scale. Current scores are descriptive, exploratory summaries.
-- Do not publish raw responses, organizational workflows or benchmark data by default.
-
-MIT License; see [LICENSE](LICENSE).
+MIT License · Copyright 2026 Zhihao LIU.

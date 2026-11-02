@@ -1,5 +1,9 @@
 # Validation Plan — How ReadyGap could earn its claims
 
+**Research hypothesis:** [ReadyGap Thesis](../framework/THESIS.md). We study the adopting entity's absorptive and operational capability, not model intelligence, purchasing or mere adoption counts.
+
+A discriminating question: can **ReadyScore and task-level Ready Coverage** predict later *reliable* AI use beyond model access, baseline digital maturity, existing adoption and a simpler organizational checklist? The method is **not automatically superior**: negative results should constrain or falsify our claims.
+
 The MVP is a **candidate instrument**. Numerical outputs are deterministic but that alone is not scientific validity.
 
 ## Sequence

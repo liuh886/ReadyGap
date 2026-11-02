@@ -1,5 +1,9 @@
 # Indicator Register — 12 candidate quantitative metrics v0.1
 
+**Theory:** [Research Thesis](../framework/THESIS.md) · **Model:** [Measurement Model](../framework/MEASUREMENT_MODEL.md) · **Scoring:** [Scoring Specification](../scoring/SCORING_SPEC.md).
+
+These are entity-level capability indicators, **not** the task-level non-compensatory gate checks. The same item is not assumed equally applicable across persons and companies absent response-process validation. The 12 items are **candidates**, not a validated scale.
+
 This is a **proposed** measurement instrument, not a validated scale. Every indicator covers the same stated 30-day period and a clearly documented scope. Counts are supplied separately from task-gate records. A zero denominator means N/A, never zero readiness; missing is Unknown. Self-reported numbers do not equal externally verified evidence.
 
 **Scope rule:** pre-screen a representative activity inventory; no selecting only AI success stories. Relevant tasks for each item are defined by its denominator. An item's numerator counts only those satisfying **all** its stated conditions. Changes cannot be scored by quietly deleting difficult activities from scope.

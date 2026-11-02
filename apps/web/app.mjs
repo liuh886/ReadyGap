@@ -1,4 +1,4 @@
-import { scoreIndicators, scoreTasks } from "./scoring.mjs";
+import { scoreIndicators, scoreTasks } from "../../scoring/engine.mjs";
 
 const $ = selector => document.querySelector(selector);
 const escapeHTML = value => String(value ?? "").replace(/[&<>"']/g, c => ({
@@ -195,7 +195,7 @@ function renderReport(capability, coverage) {
 
 async function start() {
   try {
-    const r=await Promise.all([fetch("./data/indicators.json"),fetch("./data/gates.json")]);
+    const r=await Promise.all([fetch("../../items/indicators.json"),fetch("../../items/gates.json")]);
     if (!r.every(x=>x.ok)) throw new Error("Failed to load local definitions");
     [indicators,gates]=await Promise.all(r.map(x=>x.json()));
     renderIndicators();

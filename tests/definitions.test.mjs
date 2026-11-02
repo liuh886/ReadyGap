@@ -2,8 +2,8 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 
-const registry = JSON.parse(readFileSync(new URL("../data/indicators.json", import.meta.url)));
-const gates = JSON.parse(readFileSync(new URL("../data/gates.json", import.meta.url)));
+const registry = JSON.parse(readFileSync(new URL("../items/indicators.json", import.meta.url)));
+const gates = JSON.parse(readFileSync(new URL("../items/gates.json", import.meta.url)));
 
 test("12 complete indicator contracts cover six domains exactly twice", () => {
   assert.equal(registry.indicators.length, 12);
