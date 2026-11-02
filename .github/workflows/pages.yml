@@ -1,0 +1,60 @@
+name: Publish ReadyGap to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Validate and package static site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run regression tests
+        run: node --test tests/*.test.mjs
+      - name: Assemble publication directory
+        run: |
+          set -eu
+          mkdir -p _site
+          cp index.html _site/index.html
+          cp -R apps scoring items framework docs validation _site/
+          touch _site/.nojekyll
+          test -f _site/apps/web/index.html
+          test -f _site/apps/web/assessment.html
+          test -f _site/apps/web/favicon.svg
+          test -f _site/scoring/engine.mjs
+          test -f _site/items/indicators.json
+          test -f _site/items/gates.json
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload static site
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publish
+        id: deployment
+        uses: actions/deploy-pages@v4

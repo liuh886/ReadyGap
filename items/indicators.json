@@ -1,0 +1,297 @@
+{
+  "schema_version": "0.1.0",
+  "status": "experimental_unvalidated",
+  "window_days": 30,
+  "principles": [
+    "Each item must have What, Why, Numerator, Denominator, Evidence, Action, Caveat",
+    "No historical outcome indicator enters ReadyScore",
+    "All six domains reportable; at least nine of twelve positive-denominator indicators",
+    "Data is self-reported unless independently verified"
+  ],
+  "domains": [
+    {
+      "id": "D1",
+      "title_zh": "任务与目标",
+      "title_en": "Scope & Intent"
+    },
+    {
+      "id": "D2",
+      "title_zh": "情境与知识",
+      "title_en": "Context & Knowledge"
+    },
+    {
+      "id": "D3",
+      "title_zh": "工具与操作",
+      "title_en": "Access & Operability"
+    },
+    {
+      "id": "D4",
+      "title_zh": "流程与协同",
+      "title_en": "Integration & Coordination"
+    },
+    {
+      "id": "D5",
+      "title_zh": "质量与控制",
+      "title_en": "Quality & Control"
+    },
+    {
+      "id": "D6",
+      "title_zh": "适应与学习",
+      "title_en": "Adaptation & Learning"
+    }
+  ],
+  "indicators": [
+    {
+      "id": "I01",
+      "domain_id": "D1",
+      "title_zh": "任务定义覆盖率",
+      "title_en": "Task specification coverage",
+      "what": "评估范围内具备明确输入、输出、成功标准的活动占比",
+      "why": "没有可检验的成功条件，AI 结果无法客观验收",
+      "numerator": "符合输入、输出、验收标准三项均成文的活动数",
+      "denominator": "评估范围内已筛选为 AI 适用的活动数",
+      "evidence": "样本活动清单、任务契约或流程卡",
+      "action": "为缺失活动制作一页任务契约与验收标准",
+      "caveat": "避免只收录容易定义的成功案例",
+      "value_type": "integer_ratio",
+      "min": 0,
+      "max": 100,
+      "allowed_evidence": [
+        "self_report",
+        "documented",
+        "observed"
+      ]
+    },
+    {
+      "id": "I02",
+      "domain_id": "D1",
+      "title_zh": "基线可测率",
+      "title_en": "Baseline measurability",
+      "what": "相关活动在介入 AI 前具有可重复采集的时间或质量基线的占比",
+      "why": "没有基线就无法验证改善幅度与副作用",
+      "numerator": "有时间或质量基线且标注采集方式的活动数",
+      "denominator": "评估范围内已筛选为 AI 适用的活动数",
+      "evidence": "带日期的工时记录、错误率或质量审查记录",
+      "action": "先在目标活动上记录至少一次可复核基线",
+      "caveat": "一次性主观估计不等于稳定基线",
+      "value_type": "integer_ratio",
+      "min": 0,
+      "max": 100,
+      "allowed_evidence": [
+        "self_report",
+        "documented",
+        "observed"
+      ]
+    },
+    {
+      "id": "I03",
+      "domain_id": "D2",
+      "title_zh": "授权情境可获得率",
+      "title_en": "Authorized context accessibility",
+      "what": "需要外部情境的活动中所需材料在授权范围内可取得的占比",
+      "why": "模型无法凭空获得任务所依赖的私有情境",
+      "numerator": "必要材料可访问且获使用授权的活动数",
+      "denominator": "评估范围内需要外部资料的 AI 适用活动数",
+      "evidence": "资料目录、访问权限截图、授权说明",
+      "action": "统一整理所需资料并修复访问/授权缺口",
+      "caveat": "必须同时满足可访问与授权；没有情境需求则 N/A",
+      "value_type": "integer_ratio",
+      "min": 0,
+      "max": 100,
+      "allowed_evidence": [
+        "self_report",
+        "documented",
+        "observed"
+      ]
+    },
+    {
+      "id": "I04",
+      "domain_id": "D2",
+      "title_zh": "来源与时效可核查率",
+      "title_en": "Provenance and freshness coverage",
+      "what": "需要外部情境的活动，其关键信息具备可核查来源与更新机制的占比",
+      "why": "知识可用但不可追溯、过期时仍会导致错误",
+      "numerator": "来源可追溯且有更新责任/日期的活动数",
+      "denominator": "评估范围内需要外部资料的 AI 适用活动数",
+      "evidence": "来源链接、版本、资料所有者与更新日期",
+      "action": "为高频资料补齐版本、来源与更新责任人",
+      "caveat": "仅有文件名而无可信来源不满足要求",
+      "value_type": "integer_ratio",
+      "min": 0,
+      "max": 100,
+      "allowed_evidence": [
+        "self_report",
+        "documented",
+        "observed"
+      ]
+    },
+    {
+      "id": "I05",
+      "domain_id": "D3",
+      "title_zh": "合规 AI 工具可达率",
+      "title_en": "Authorized AI tool access",
+      "what": "适用活动中至少有一条获准、稳定可用的 AI 使用路径的占比",
+      "why": "订阅与采购不等于具体任务可使用",
+      "numerator": "至少有一条获准工具路径的活动数",
+      "denominator": "评估范围内已筛选为 AI 适用的活动数",
+      "evidence": "获准工具清单、权限记录、访问试验",
+      "action": "明确任务对应工具与使用边界，修复授权/访问",
+      "caveat": "未经允许上传数据不算合规可达",
+      "value_type": "integer_ratio",
+      "min": 0,
+      "max": 100,
+      "allowed_evidence": [
+        "self_report",
+        "documented",
+        "observed"
+      ]
+    },
+    {
+      "id": "I06",
+      "domain_id": "D3",
+      "title_zh": "可控操作接口覆盖率",
+      "title_en": "Controlled action/handoff coverage",
+      "what": "需要对外部系统采取行动的活动，具备受控接口或明确人工执行交接的占比",
+      "why": "只生成文本无法完成需执行的闭环任务",
+      "numerator": "具备授权 API/工具接口或可验证人工交接的活动数",
+      "denominator": "适用且需要外部动作的活动数",
+      "evidence": "API 权限记录、工具清单或人工交接作业卡",
+      "action": "构建最小授权接口或标准化人工接单协议",
+      "caveat": "纯阅读任务无需接口：分母为零时 N/A",
+      "value_type": "integer_ratio",
+      "min": 0,
+      "max": 100,
+      "allowed_evidence": [
+        "self_report",
+        "documented",
+        "observed"
+      ]
+    },
+    {
+      "id": "I07",
+      "domain_id": "D4",
+      "title_zh": "人机角色清晰率",
+      "title_en": "Human–AI role clarity",
+      "what": "适用活动中明确 AI 负责内容、人工责任与关键交接点的占比",
+      "why": "权责不清容易造成流程断裂和错误传播",
+      "numerator": "AI/人工责任与交接点均明确的活动数",
+      "denominator": "评估范围内已筛选为 AI 适用的活动数",
+      "evidence": "工作流图、责任矩阵、交接记录",
+      "action": "制定包含异常接管点的责任与交接图",
+      "caveat": "只写“人机协同”而无角色划分不算",
+      "value_type": "integer_ratio",
+      "min": 0,
+      "max": 100,
+      "allowed_evidence": [
+        "self_report",
+        "documented",
+        "observed"
+      ]
+    },
+    {
+      "id": "I08",
+      "domain_id": "D4",
+      "title_zh": "流程可复现率",
+      "title_en": "Workflow reproducibility",
+      "what": "适用活动中具备可重复执行的工作步骤与输入输出接口的占比",
+      "why": "一次性演示不代表可以在日常业务重复",
+      "numerator": "第三方按说明可复现主要步骤的活动数",
+      "denominator": "评估范围内已筛选为 AI 适用的活动数",
+      "evidence": "执行手册、流程模板、重复执行记录",
+      "action": "沉淀可复现 SOP 或简单工作流",
+      "caveat": "本指标测流程规范，不替代端到端运行试验",
+      "value_type": "integer_ratio",
+      "min": 0,
+      "max": 100,
+      "allowed_evidence": [
+        "self_report",
+        "documented",
+        "observed"
+      ]
+    },
+    {
+      "id": "I09",
+      "domain_id": "D5",
+      "title_zh": "结果验证可实施率",
+      "title_en": "Executable evaluation criteria",
+      "what": "适用活动中有可操作结果检查步骤及失败标准的占比",
+      "why": "高质量 AI 应用必须能够发现错误",
+      "numerator": "存在可执行验收/校验规则的活动数",
+      "denominator": "评估范围内已筛选为 AI 适用的活动数",
+      "evidence": "检查清单、测试用例、审查标准",
+      "action": "为关键结果建立样例与可重复核验规则",
+      "caveat": "“看着差不多”不算可执行评估",
+      "value_type": "integer_ratio",
+      "min": 0,
+      "max": 100,
+      "allowed_evidence": [
+        "self_report",
+        "documented",
+        "observed"
+      ]
+    },
+    {
+      "id": "I10",
+      "domain_id": "D5",
+      "title_zh": "监督恢复准备率",
+      "title_en": "Oversight and recovery coverage",
+      "what": "适用活动具备适当权限、人工监督、异常上报与恢复路径的占比",
+      "why": "无法接管和纠错的流程不适合持续运行",
+      "numerator": "同时具备权限监督、异常处理与恢复路径的活动数",
+      "denominator": "评估范围内已筛选为 AI 适用的活动数",
+      "evidence": "审批/撤销权限、应急流程、责任人",
+      "action": "增加审批、人工接管或回滚设计",
+      "caveat": "高风险活动另需专业审查，不能用高分替代",
+      "value_type": "integer_ratio",
+      "min": 0,
+      "max": 100,
+      "allowed_evidence": [
+        "self_report",
+        "documented",
+        "observed"
+      ]
+    },
+    {
+      "id": "I11",
+      "domain_id": "D6",
+      "title_zh": "改进数据可采集率",
+      "title_en": "Learning instrumentation coverage",
+      "what": "适用活动中已定义并能够采集质量、时间或错误等反馈信号的占比",
+      "why": "没有反馈，组织无法判断 AI 应用是否恶化或改善",
+      "numerator": "具有反馈记录方案与可采集信号的活动数",
+      "denominator": "评估范围内已筛选为 AI 适用的活动数",
+      "evidence": "日志字段、记录模板、监控指标定义",
+      "action": "为运行活动增加轻量反馈记录",
+      "caveat": "本项是记录能力，不是既有收益或成功率",
+      "value_type": "integer_ratio",
+      "min": 0,
+      "max": 100,
+      "allowed_evidence": [
+        "self_report",
+        "documented",
+        "observed"
+      ]
+    },
+    {
+      "id": "I12",
+      "domain_id": "D6",
+      "title_zh": "反馈闭环责任覆盖率",
+      "title_en": "Feedback ownership coverage",
+      "what": "适用活动中明确反馈责任人及复测/纠正触发条件的占比",
+      "why": "错误记录不自动转化为系统性改进",
+      "numerator": "明确责任人及复测或纠正触发规则的活动数",
+      "denominator": "评估范围内已筛选为 AI 适用的活动数",
+      "evidence": "变更责任矩阵、复测流程、纠正触发规则",
+      "action": "设置迭代责任人和最小复测机制",
+      "caveat": "不要用已节省工时或已实现 ROI 作为本项分子",
+      "value_type": "integer_ratio",
+      "min": 0,
+      "max": 100,
+      "allowed_evidence": [
+        "self_report",
+        "documented",
+        "observed"
+      ]
+    }
+  ]
+}
