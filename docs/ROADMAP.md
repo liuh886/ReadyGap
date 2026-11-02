@@ -45,14 +45,16 @@ The public brand is ReadyGap; the proposed general measurement framework is U-AR
 
 **Principle: Diverge → Observe → Converge → Validate → Quantify.** Creativity is not a shortcut to scientific claims; scientific scrutiny should refine useful ideas rather than prevent their discovery.
 
-## Public language policy (post-launch)
+## Public language policy — English homepage, bilingual assessment
 
-- [x] English-only homepage and assessment page (no language selector or duplicate Chinese routes)
-- [x] Translate all dynamic survey definitions, gate checks, result labels, errors, actions, and shareable summaries
-- [x] Preserve original scoring formulas while adding `*_en` fields to canonical metric/gate JSON
-- [x] Add English public guide for links from both web pages
-- [x] Enforce public-facing English with CI checks for source copy, HTML lang, and contract completeness
-- [ ] Native-English wording review with users from multiple sectors
+- [x] Keep the brand/product homepage English-only
+- [x] Offer English / Simplified Chinese on the **assessment itself**, without a duplicate scoring fork
+- [x] Translate all questionnaire indicators, task checks, tooltips, reports, next actions and copyable summaries
+- [x] Preserve form values, task inputs and selections when switching languages (no reload or storage)
+- [x] Support direct `?lang=zh` URLs and retain language choice in the current URL only
+- [x] Add bilingual indicator/locale contract and switch-state tests
+- [ ] Browser-based keyboard/mobile/visual QA of both languages
+- [ ] Independent bilingual terminology and cognitive pretest
 
 ## v0.2 — shareable public experience and meaningful task sampling
 

@@ -79,12 +79,12 @@ See [full architecture and dependency rules](docs/ARCHITECTURE.md).
 **The homepage is not the 12-item questionnaire.** It introduces the research thesis, a conceptual diagram of the model frontier vs entity readiness, five counterintuitive field signals, and the two-score idea. Visitors then opt into an **independent assessment page**.
 
 - **[Landing page](apps/web/index.html)** — English-only, AI-native dark design, animated conceptual gap monitor, editorial story and interactive constraint switcher.
-- **[Assessment prototype](apps/web/assessment.html)** — fully English form, including all 12 indicator contracts, task gate prompts, validation messages, result summaries and action suggestions. Numerical scoring is unchanged.
+- **[Assessment prototype](apps/web/assessment.html)** — bilingual English / 简体中文 form including 12 indicator contracts, task checks, validation, action recommendations, and copied reports; shared scoring engine unchanged.
 - **[Landing CSS](apps/web/landing.css)** and [micro-interaction](apps/web/landing.js) — presentation layer isolated from scoring, with accessible reduced-motion styling.
 
 **Featured exploratory signals:** Context Reconstruction Cost, Human Rescue Rate, Cold-start Transfer, Model Upgrade Capture and Recovery Cost. These are research candidates, **not** extra inputs or weights in ReadyScore.
 
-**Language policy:** Public website is **English-only** (no Chinese page, no language toggle). Canonical item JSON retains the original research notes while adding explicit English labels and definitions; the UI uses only `*_en` fields. The [English public guide](docs/PUBLIC_GUIDE_EN.md) is linked from the website. Bilingual research notes remain in the repository as historical methodology records.
+**Language policy:** The public **homepage stays English-only**. The assessment is available in **English and Simplified Chinese (简体中文)** through an in-page toggle, or directly via [Chinese questionnaire](https://liuh886.github.io/ReadyGap/apps/web/assessment.html?lang=zh). Changing languages updates the visible instrument and generated report without reloading or clearing entered counts/tasks. Both languages use the **same canonical indicator IDs, numerical scoring engine, and non-compensatory task gates**. Original Chinese wording and English contracts remain stored together in item JSON; the [English public guide](docs/PUBLIC_GUIDE_EN.md) is still available for general visitors.
 
 ## Try the website (experimental)
 

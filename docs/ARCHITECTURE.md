@@ -23,9 +23,10 @@ ReadyGap/
 │   └── web/               # static UI only; imports the scoring engine
 │       ├── index.html      # concept-first homepage; no questionnaire
 │       ├── landing.css     # homepage only
-│       ├── assessment.html # distinct experimental assessment route
+│       ├── assessment.html # English + Simplified Chinese; ?lang=zh
 │       ├── styles.css      # questionnaire styling
-│       └── app.mjs         # assessment UI only
+│       ├── app.mjs         # assessment UI only
+│       └── assessment-i18n.mjs # presentation translations, no scoring
 ├── docs/                  # product boundaries, architecture, roadmap
 │   ├── PRODUCT_CHARTER.md
 │   ├── ARCHITECTURE.md
@@ -76,3 +77,11 @@ Do not create a fake global dataset: \`benchmarks/\` currently holds policy only
 ## Current known limitations
 
 The website accepts self-reported counts and gate states without independently checking artifacts; its task-sample representativeness is not yet enforced. No global benchmark, psychometric validation, digital outcome tracking or public deployment is claimed.
+
+
+## Language separation
+
+The public **landing page is English-only**. The assessment page uses one HTML route, one set of questionnaire definitions, and one numeric engine. The optional `?lang=zh` query selects Simplified Chinese. English/Chinese are **presentation variants**, not different instruments. The language switch updates text and attributes in place and preserves the current form state, without local storage, cookies or network requests. The assessment report and copied aggregate summary follow the selected language.
+
+The `items/indicators.json` and `items/gates.json` fields retain their original Chinese text plus parallel English fields; locale logic never changes indicator IDs, gate states, denominators, weights or results. The product homepage remains unchanged.
+
