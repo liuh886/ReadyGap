@@ -18,6 +18,18 @@ The public brand is ReadyGap; the proposed general measurement framework is U-AR
 - [ ] Cognitive pretests with individuals, teams, departments and organizations
 - [ ] Browser accessibility, mobile and deployment verification (not yet claimed)
 
+## Exploration sprint — diverge before measuring harder
+
+- [x] Establish [Creative Metrics Lab](../items/CREATIVE_METRICS_LAB.md): 24 unvalidated but observable candidate signals with proposed numeric probes and actions
+- [x] Keep *precondition*, *friction*, *stress test*, *outcome* and *model interaction* measures conceptually separate
+- [x] Draft [Fast Field Pilots](../validation/FAST_PILOTS.md) for context warm-up, cold start, last-mile action, safe recovery and model-upgrade capture
+- [ ] Trial a small selection against pre-selected tasks for one individual, one small team and one larger coordinating entity
+- [ ] Capture surprise, clarity, feasibility, gaming risk and next-action usefulness in short notes
+- [ ] Converge: **keep / simplify / combine / move to outcomes / drop**, only then review the 12-item core and scoring
+- [ ] Keep v0.1 published score definitions unchanged until a separately reviewed change is justified
+
+**Principle: Diverge → Observe → Converge → Validate → Quantify.** Creativity is not a shortcut to scientific claims; scientific scrutiny should refine useful ideas rather than prevent their discovery.
+
 ## v0.2 — shareable public experience and meaningful task sampling
 
 - [ ] Deploy a reviewed static site with easy-to-share versioned report/card (opt-in only)

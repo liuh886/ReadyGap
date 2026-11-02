@@ -48,6 +48,14 @@ Every proposed indicator must answer **What is measured? Why necessary? How quan
 
 Scores describe the **declared scope, period and evidence state**. They are not population percentiles or reliable comparisons between persons and whole companies. Report unknowns, N/A, risk exceptions and sample size. **High scores are not AI-safety approvals.**
 
+## Creative metrics lab / 创意指标实验室
+
+**Next step is divergent discovery, not prematurely proving the 12-item questionnaire.** We deliberately brainstorm unusual, task-observable measurements that can surprise the respondent and point toward a controllable fix.
+
+- **[24 creative metric candidates](items/CREATIVE_METRICS_LAB.md)** — context warm-up tax, cold-start transfer, permission hops, read-to-act gaps, recovery cost, model-upgrade capture, one-change unlock and more. Candidates are labeled as *preconditions*, *friction*, *stress tests*, *outcomes* or *model interactions*, not silently inserted into ReadyScore.
+- **[Four lightweight field pilots](validation/FAST_PILOTS.md)** — observe real tasks first, then review whether the metric adds clarity and changes a practical decision.
+- **Convergence later:** only after exploratory feedback, apply What / Why / Numeric / Evidence / Action and formal validity checks. **The existing 12 indicators and scoring formulas remain unchanged in this round.**
+
 ## Project architecture
 
 We intentionally separate the research logic from item definitions, numerical code and user experience.
@@ -90,10 +98,12 @@ The code is ready for hosting from the repo root as static files, but **public d
 1. [Thesis / 研究命题](framework/THESIS.md) — *why* the measurement matters.
 2. [Measurement model](framework/MEASUREMENT_MODEL.md) — precisely *what* is measured, and what is excluded.
 3. [Design principles](framework/DESIGN_PRINCIPLES.md) — how to turn an indicator into a meaningful action.
-4. [Indicator register](items/INDICATOR_REGISTER.md) — all twelve proposed metric contracts.
-5. [Scoring protocol](scoring/SCORING_SPEC.md) — numeric formulae, missingness and gates.
-6. [Validation plan](validation/VALIDATION_PLAN.md) — how to test, falsify and improve the instrument.
-7. [Roadmap](docs/ROADMAP.md) — practical release stages.
+4. [Indicator register](items/INDICATOR_REGISTER.md) — the twelve current candidate metric contracts (not final).
+5. [Creative metrics lab](items/CREATIVE_METRICS_LAB.md) — 24 unconventional candidate ideas; not in scoring.
+6. [Fast field pilots](validation/FAST_PILOTS.md) — how to explore candidate value before validation.
+7. [Scoring protocol](scoring/SCORING_SPEC.md) — numeric formulae, missingness and gates.
+8. [Validation plan](validation/VALIDATION_PLAN.md) — how to test, falsify and improve the instrument.
+9. [Roadmap](docs/ROADMAP.md) — practical release stages.
 
 **Contribution rule:** describe the construct before creating an indicator, keep the scoring engine outside the UI, and never call an unvalidated self-reported score a global AI readiness ranking.
 
