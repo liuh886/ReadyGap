@@ -25,37 +25,55 @@
       "id": "objective",
       "title_zh": "任务目标和验收标准明确",
       "requirement_zh": "有明确任务目标、输入输出与可操作验收条件",
-      "action_zh": "为此活动补充任务契约与验收标准"
+      "action_zh": "为此活动补充任务契约与验收标准",
+      "title_en": "Clear objectives and acceptance criteria",
+      "requirement_en": "Inputs, outputs, objectives, and executable acceptance checks are explicitly defined.",
+      "action_en": "Write a task brief with observable acceptance criteria."
     },
     {
       "id": "context",
       "title_zh": "所需资料可靠且获授权",
       "requirement_zh": "能够取得必要资料，满足来源、时效与使用授权要求",
-      "action_zh": "补齐资料、来源/版本与数据访问授权"
+      "action_zh": "补齐资料、来源/版本与数据访问授权",
+      "title_en": "Authorized, reliable task context",
+      "requirement_en": "Required materials can be accessed with provenance, freshness, and permissions in place.",
+      "action_en": "Resolve source quality, provenance, and authorized access gaps."
     },
     {
       "id": "access",
       "title_zh": "AI 工具与操作路径获准",
       "requirement_zh": "工具可合法合规访问，必要系统操作有受控接口/人工交接",
-      "action_zh": "解决工具访问、最小权限或受控人工交接"
+      "action_zh": "解决工具访问、最小权限或受控人工交接",
+      "title_en": "Approved AI tools and action path",
+      "requirement_en": "The tool is approved for the activity, with a controlled interface or human handoff for necessary actions.",
+      "action_en": "Provide authorized tool access, minimum permissions, or an explicit human handoff."
     },
     {
       "id": "handoff",
       "title_zh": "人工与 AI 责任和流程明确",
       "requirement_zh": "有明确输入输出、交接节点、复核人及执行步骤",
-      "action_zh": "梳理角色分工和可复现流程"
+      "action_zh": "梳理角色分工和可复现流程",
+      "title_en": "Clear human–AI responsibilities",
+      "requirement_en": "Human and AI responsibilities, review points, and execution steps are defined.",
+      "action_en": "Document owners, handoffs, and a reproducible execution procedure."
     },
     {
       "id": "verification",
       "title_zh": "结果可以独立验收",
       "requirement_zh": "有可执行的质量检查与失败判据",
-      "action_zh": "建立结果验证规则与代表性测试"
+      "action_zh": "建立结果验证规则与代表性测试",
+      "title_en": "Independently verifiable outputs",
+      "requirement_en": "Executable quality checks and failure criteria are available.",
+      "action_en": "Create acceptance checks and representative evaluation cases."
     },
     {
       "id": "oversight",
       "title_zh": "监督、异常处理与恢复具备",
       "requirement_zh": "有权限监督、人工接管、异常升级和恢复路径",
-      "action_zh": "落实审批、异常处理和恢复机制"
+      "action_zh": "落实审批、异常处理和恢复机制",
+      "title_en": "Oversight, escalation, and recovery",
+      "requirement_en": "Appropriate permissions, human takeover, escalation, and recovery plans are in place.",
+      "action_en": "Set up human oversight, incident handling, and rollback or recovery routes."
     }
   ]
 }
