@@ -21,13 +21,17 @@ The public brand is ReadyGap; the proposed general measurement framework is U-AR
 ## Website information architecture — concept first (PR #1)
 
 - [x] Separate a research-led public **homepage** from the detailed **assessment** route
-- [x] Hero: **AI is advancing. Are we ready?** with an explicitly conceptual model-vs-entity gap visual
+- [x] Hero: **AI is getting smarter. Are we getting readier?** with an explicitly conceptual model-vs-entity gap visual
 - [x] Explain the thesis and distinction between Readiness, Adoption and Realized Value before any questionnaire
 - [x] Feature five unconventional measurement perspectives without claiming they are validated score inputs
 - [x] Introduce ReadyScore / Ready Coverage as different lenses rather than publishing sample scores
 - [x] Preserve independent assessment scoring, source definitions and privacy constraints
+- [x] Refresh brand design to dark AI-native visual language: kinetic type, animated conceptual gap, asymmetric bento, responsive mobile treatment and accessible motion
+- [x] Add interactive blocker scenario to explain knowledge, systems and verification without creating fictional scores
+- [x] Harmonize the experimental assessment with the same dark-violet/mint design language
+- [x] Add GitHub Pages deployment workflow and route/asset tests (requires repository Pages enabled)
 - [ ] Visual/browser QA across narrow screens, desktops and keyboard-only navigation
-- [ ] Decide and configure hosted public launch; do not claim a live URL before verification
+- [ ] Verify successful Pages activation and public HTTPS URL (do not claim live before check)
 
 ## Exploration sprint — diverge before measuring harder
 
@@ -43,7 +47,7 @@ The public brand is ReadyGap; the proposed general measurement framework is U-AR
 
 ## v0.2 — shareable public experience and meaningful task sampling
 
-- [ ] Deploy a reviewed static site with easy-to-share versioned report/card (opt-in only)
+- [ ] Launch verified public site and add easy-to-share versioned report/card (opt-in only)
 - [ ] Make a **pre-scored activity inventory** and documented AI-eligibility screening to curb cherry-picking
 - [ ] Provide understandable examples of numerator, denominator and evidence for each entity type
 - [ ] Shorten time-to-result using empirically tested skip logic, without inventing N/A conditions

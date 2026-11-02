@@ -1,233 +1,136 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="theme-color" content="#111b28"/>
-  <meta name="description" content="ReadyGap: 衡量主体的 AI 就绪度，而不是模型的智能水平。从真实工作出发，发现 AI 应用的隐形阻碍。开源、模型中立。"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:title" content="ReadyGap — AI is advancing. Are you ready?"/>
-  <meta property="og:description" content="Measure the readiness of the entity, not the intelligence of the model."/>
-  <title>ReadyGap — AI is advancing. Are you ready?</title>
-  <link rel="stylesheet" href="./landing.css"/>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="theme-color" content="#080a12"/>
+<meta name="description" content="ReadyGap — Measure the readiness of the entity, not the intelligence of the model. A new open way to understand how people and organizations absorb AI."/>
+<meta property="og:type" content="website"/><meta property="og:title" content="ReadyGap — AI is advancing. Are we ready?"/>
+<meta property="og:description" content="There are plenty of benchmarks for models. What about the people and organizations trying to use them?"/>
+<title>ReadyGap — AI is advancing. Are we ready?</title>
+<link rel="icon" type="image/svg+xml" href="./favicon.svg"/>
+<link rel="stylesheet" href="./landing.css"/>
+<script src="./landing.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">跳转至内容</a>
-  <header class="site-header">
-    <div class="nav-wrap">
-      <a class="logo" href="./" aria-label="ReadyGap 主页"><span class="logo-emblem" aria-hidden="true">R<span>.</span></span><span>ReadyGap</span></a>
-      <nav aria-label="主导航">
-        <a href="#thesis">为什么</a>
-        <a href="#signals">新视角</a>
-        <a href="#measure">如何度量</a>
-        <a class="nav-github" href="https://github.com/liuh886/ReadyGap" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
-      </nav>
-      <a class="nav-cta" href="./assessment.html">体验测评 <span aria-hidden="true">↗</span></a>
-    </div>
-  </header>
-
-  <main id="main">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-inner">
-        <div class="hero-copy">
-          <p class="eyebrow"><span class="pulse" aria-hidden="true"></span> AN OPEN EXPERIMENT IN AI READINESS <span class="eyebrow-index">/ V0.1</span></p>
-          <h1 id="hero-title">AI is advancing.<br/><span>Are we ready?</span></h1>
-          <p class="hero-title-zh">模型越来越强，<br/>我们准备好了吗？</p>
-          <p class="hero-lede">我们已经有无数榜单衡量 AI 能做什么。<br/>但很少有人测量：<strong>人、团队和组织，究竟能让 AI 做成什么？</strong></p>
-          <div class="hero-actions">
-            <a class="button button-light" href="#thesis">了解 ReadyGap <span aria-hidden="true">↘</span></a>
-            <a class="button button-outline" href="./assessment.html">体验初版测评 <span aria-hidden="true">↗</span></a>
-          </div>
-          <p class="hero-note">OPEN SOURCE · MODEL-INDEPENDENT · INDIVIDUALS TO ORGANIZATIONS</p>
-        </div>
-        <div class="hero-visual">
-          <div class="visual-top"><span class="mini-index">THE MISSING VARIABLE</span><span class="visual-decoration" aria-hidden="true">◌ ◌ ◌</span></div>
-          <svg class="hero-diagram" viewBox="0 0 540 392" role="img" aria-label="概念示意：模型能力和主体就绪度可能以不同速度发展；两者之间存在需要识别和改善的缺口。不是实测数据。">
-            <defs>
-              <linearGradient id="modelLine" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#71e4d1"/><stop offset="100%" stop-color="#b0f9e1"/></linearGradient>
-              <linearGradient id="gapGradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#75d6c1" stop-opacity=".18"/><stop offset="100%" stop-color="#75d6c1" stop-opacity="0"/></linearGradient>
-            </defs>
-            <g stroke="#5b6b7b" stroke-width="1" opacity=".25">
-              <path d="M45 75 H510 M45 140 H510 M45 205 H510 M45 270 H510 M45 335 H510"/>
-              <path d="M45 45 V343 M138 45 V343 M231 45 V343 M324 45 V343 M417 45 V343 M510 45 V343"/>
-            </g>
-            <path d="M45 270 C115 259 147 223 214 201 S340 128 400 104 S470 69 510 45 L510 255 C445 260 396 258 335 272 S225 286 156 296 S77 308 45 314Z" fill="url(#gapGradient)"/>
-            <path d="M45 270 C115 259 147 223 214 201 S340 128 400 104 S470 69 510 45" stroke="url(#modelLine)" stroke-width="4.5" fill="none" stroke-linecap="round"/>
-            <path d="M45 314 C114 299 157 299 215 294 S332 276 399 269 S468 265 510 255" stroke="#97a8c1" stroke-width="3.4" stroke-dasharray="8 8" fill="none" stroke-linecap="round"/>
-            <circle cx="400" cy="104" r="7.5" fill="#a9f3dc" stroke="#182a38" stroke-width="4"/>
-            <circle cx="399" cy="269" r="7.5" fill="#b7c8db" stroke="#182a38" stroke-width="4"/>
-            <path d="M399 116 V256" stroke="#e0eee9" opacity=".8" stroke-dasharray="4 7" stroke-width="1.6"/>
-            <g font-family="Inter,Arial,sans-serif" font-size="15">
-              <text x="310" y="67" fill="#c3f9e7" font-weight="600">Model capability</text>
-              <text x="310" y="318" fill="#bdc8d6" font-weight="600">Entity readiness</text>
-            </g>
-            <rect x="298" y="172" width="160" height="39" rx="8" fill="#203747" stroke="#3b5663"/>
-            <text x="378" y="196" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="700" fill="#f0f8f6">THE READY GAP</text>
-            <text x="46" y="369" font-family="Inter,Arial,sans-serif" font-size="12" fill="#8ca1b2">THEN</text>
-            <text x="473" y="369" font-family="Inter,Arial,sans-serif" font-size="12" fill="#8ca1b2">NEXT →</text>
+<a class="skip" href="#content">跳转至主内容</a>
+<header class="header" id="top">
+  <div class="nav-shell">
+    <a class="brand" href="./" aria-label="ReadyGap 首页"><span class="brand-logo" aria-hidden="true"><i></i><i></i><i></i></span><span>ready<span class="brand-em">gap</span></span><span class="brand-version">beta</span></a>
+    <nav class="nav-links" aria-label="主导航"><a href="#why">WHY</a><a href="#signals">SIGNALS</a><a href="#method">METHOD</a><a href="https://github.com/liuh886/ReadyGap" rel="noopener noreferrer" target="_blank">GITHUB ↗</a></nav>
+    <a class="nav-action" href="./assessment.html">Try assessment <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<main id="content">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="ambient ambient-one" aria-hidden="true"></div><div class="ambient ambient-two" aria-hidden="true"></div>
+    <div class="grid-surface" aria-hidden="true"></div>
+    <div class="container hero-grid">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span class="orb" aria-hidden="true"></span> THE OTHER SIDE OF AI PROGRESS <span class="beta-stamp">RESEARCH PREVIEW / 01</span></div>
+        <h1 id="hero-title">AI is getting<br/><span class="gradient-text">smarter.</span><br/>Are we getting<br/><span class="outlined-text">readier?</span></h1>
+        <p class="hero-cn">当模型不断进步，<strong>你和你的组织，准备好了吗？</strong></p>
+        <p class="hero-body">We benchmark the models. <em>It's time to measure the rest of us.</em><br/>衡量模型能力之外的另一个变量：人、团队与组织吸收、整合和运用 AI 的能力。</p>
+        <div class="hero-buttons"><a class="button button-primary" href="#why">Explore the idea <span>↘</span></a><a class="button button-soft" href="./assessment.html">Try the prototype <span>↗</span></a></div>
+        <div class="hero-under"><span><span class="signal-dot"></span> OPEN SOURCE</span><span>MODEL INDEPENDENT</span><span>FOR EVERY ENTITY</span></div>
+      </div>
+      <div class="hero-art reveal" aria-label="概念性的模型能力与主体就绪度差距可视化，非真实测量数据">
+        <div class="glass-frame">
+          <div class="viz-header"><span><span class="small-light"></span> READYGAP // SIGNAL MONITOR</span><span>DEMO / CONCEPTUAL</span></div>
+          <div class="viz-title"><div><small>THE UNMEASURED VARIABLE</small><strong>From intelligence<br/>to impact.</strong></div><div class="viz-mark" aria-hidden="true">↗</div></div>
+          <svg class="curve" viewBox="0 0 560 350" role="img" aria-label="示意图：模型能力上升较快，主体准备程度提升较慢，二者之间存在差距。非真实时间序列。">
+          <defs><linearGradient id="modelStroke" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#8178ff"/><stop offset="55%" stop-color="#a88cff"/><stop offset="100%" stop-color="#d2b3ff"/></linearGradient><linearGradient id="spaceFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#7667ff" stop-opacity=".29"/><stop offset="100%" stop-color="#7667ff" stop-opacity=".02"/></linearGradient><filter id="halo"><feGaussianBlur stdDeviation="9"/></filter></defs>
+          <g stroke="#526078" opacity=".22" stroke-width="1"><path d="M22 65 H540 M22 119 H540 M22 173 H540 M22 227 H540 M22 281 H540 M22 334 H540"/><path d="M22 24 V334 M109 24 V334 M195 24 V334 M282 24 V334 M368 24 V334 M455 24 V334 M540 24 V334"/></g>
+          <path d="M22 282 C92 274 138 265 190 229 S296 160 363 125 S461 59 540 27 L540 254 C476 252 413 258 355 270 S217 286 144 303 S57 309 22 313Z" fill="url(#spaceFill)"/>
+          <path class="line-model" d="M22 282 C92 274 138 265 190 229 S296 160 363 125 S461 59 540 27" fill="none" stroke="url(#modelStroke)" stroke-width="5" stroke-linecap="round"/>
+          <path class="line-ready" d="M22 313 C90 310 134 304 195 295 S309 279 364 270 S468 250 540 254" fill="none" stroke="#80e4d0" stroke-width="4" stroke-linecap="round" stroke-dasharray="12 9"/>
+          <g><circle cx="363" cy="125" r="14" fill="#9c86ff" opacity=".25" filter="url(#halo)"/><circle cx="363" cy="125" r="5.8" fill="#c6afff"/><circle cx="364" cy="270" r="5.8" fill="#80e4d0"/><path d="M363 141 V254" stroke="#b9c3ff" stroke-dasharray="3 7" opacity=".55"/></g>
+          <rect x="296" y="178" width="154" height="33" rx="16" fill="#272544" stroke="#6e62bd"/><text x="373" y="200" fill="#cdbdff" font-family="Arial,sans-serif" font-size="13" font-weight="700" text-anchor="middle">THE READY GAP</text>
+          <text x="365" y="66" fill="#c5b8ff" font-size="12" font-family="Arial,sans-serif" font-weight="700">MODEL FRONTIER</text><text x="348" y="318" fill="#9ce9d8" font-size="12" font-family="Arial,sans-serif" font-weight="700">ENTITY READINESS</text>
           </svg>
-          <div class="visual-bottom"><span>模型能力 ≠ 主体就绪度</span><span>CONCEPTUAL · NOT REAL DATA</span></div>
+          <div class="viz-footer"><span>CAPABILITY IS NOT CAPACITY TO USE IT.</span><span><i class="small-light"></i> NOT MEASURED DATA</span></div>
         </div>
+        <div class="floating-pill pill-a"><span class="pill-icon">✳</span> What blocks real work?</div>
+        <div class="floating-pill pill-b"><span class="pill-icon">◈</span> Find your missing link.</div>
       </div>
-    </section>
-
-    <section class="main-container thesis-section" id="thesis" aria-labelledby="thesis-title">
-      <div class="section-marker"><span>01 / THE IDEA</span><span>研究命题</span></div>
-      <div class="thesis-grid">
-        <div>
-          <h2 id="thesis-title">问题不只是<br/>AI <em>有多强。</em></h2>
-          <p class="large-copy">一家企业可以订阅最先进的模型，却仍然无法让 AI 读取必要资料、通过系统完成任务，或验证最终结果。</p>
-        </div>
-        <div class="thesis-detail">
-          <div class="manifesto"><span class="quote-symbol" aria-hidden="true">“</span><p>Measure the readiness of the entity, <em>not the intelligence of the model.</em></p></div>
-          <p>AI 技术能力的增长，与一个主体吸收、整合和利用 AI 的能力，是两个不同的改进变量。</p>
-          <p>ReadyGap 关注后者：从个人、团队到部门和企业，究竟有哪些现实条件，让模型能力可以转化为可靠、有价值的行动？</p>
-          <a class="text-link" href="../../framework/THESIS.md">阅读完整研究命题 <span aria-hidden="true">↗</span></a>
-        </div>
-      </div>
-      <div class="distinction-bar" aria-label="三个不同概念">
-        <div><small>01</small><strong>AI Readiness</strong><span>具备什么条件</span></div>
-        <div class="not-equal" aria-hidden="true">≠</div>
-        <div><small>02</small><strong>AI Adoption</strong><span>实际如何采用</span></div>
-        <div class="not-equal" aria-hidden="true">≠</div>
-        <div><small>03</small><strong>AI Value</strong><span>真正创造什么价值</span></div>
-      </div>
-    </section>
-
-    <section class="contrast-section" aria-labelledby="contrast-title">
-      <div class="main-container contrast-inner">
-        <div class="section-marker light"><span>02 / A DIFFERENT QUESTION</span><span>评估方向反转</span></div>
-        <h2 id="contrast-title">不要只问：<br/><span>“我们有没有 AI 战略？”</span></h2>
-        <p>我们更想问一个具体得多、也更有挑战性的问题：</p>
-        <blockquote>如果今天有一个足够强的 AI Agent，<br/>它能在你的实际工作中<strong>做成什么？</strong><br/>又会在哪里<strong>被卡住？</strong></blockquote>
-        <div class="contrast-notes">
-          <span>知识能否被理解？</span><span>工具是否获授权？</span><span>流程能否衔接？</span><span>结果是否可验证？</span><span>错误能否恢复？</span>
-        </div>
-        <p class="caveat">这是用于发现障碍的思想实验，不意味着所有任务都应该自动化或交给自主 Agent。</p>
-      </div>
-    </section>
-
-    <section class="main-container signals-section" id="signals" aria-labelledby="signals-title">
-      <div class="section-marker"><span>03 / UNEXPECTED SIGNALS</span><span>新的观察视角</span></div>
-      <div class="signals-heading">
-        <div><h2 id="signals-title">真正的阻碍，<br/>可能藏在这些细节里。</h2></div>
-        <p>不要从“拥有多少 AI 资源”开始。试着观察一次真实工作，在 AI 接手之前、运行之中和出错之后，究竟发生了什么。</p>
-      </div>
-      <div class="signal-grid">
-        <article class="signal-card featured">
-          <div class="signal-top"><span>01 / CONTEXT</span><span aria-hidden="true">↗</span></div>
-          <div class="signal-symbol context-symbol" aria-hidden="true"><span>?</span><i></i><i></i></div>
-          <h3>Context Reconstruction Cost</h3>
-          <h4>情境重建成本</h4>
-          <p>模型很快给出答案，但你花了多久才能让它理解背景、限制条件和真正的任务？</p>
-          <div class="signal-measure">观察单位 <strong>人工准备分钟 / 任务</strong></div>
-        </article>
-        <article class="signal-card">
-          <div class="signal-top"><span>02 / RELIABILITY</span><span aria-hidden="true">↗</span></div>
-          <div class="signal-icon" aria-hidden="true">↺</div>
-          <h3>Human Rescue Rate</h3>
-          <h4>人工救援率</h4>
-          <p>多少次 AI 尝试在预定交接之外，需要人临时补充信息、纠偏或接管才能继续？</p>
-          <div class="signal-measure">观察单位 <strong>非计划救援的尝试 / 总尝试</strong></div>
-        </article>
-        <article class="signal-card">
-          <div class="signal-top"><span>03 / TRANSFER</span><span aria-hidden="true">↗</span></div>
-          <div class="signal-icon" aria-hidden="true">⇄</div>
-          <h3>Cold-start Transfer</h3>
-          <h4>冷启动可移交性</h4>
-          <p>换一位不熟悉流程的人，使用同样的知识与 AI，能否仍然完成工作？</p>
-          <div class="signal-measure">观察单位 <strong>新接手者验收通过率</strong></div>
-        </article>
-        <article class="signal-card">
-          <div class="signal-top"><span>04 / ABSORPTION</span><span aria-hidden="true">↗</span></div>
-          <div class="signal-icon" aria-hidden="true">↑</div>
-          <h3>Model Upgrade Capture</h3>
-          <h4>模型进步吸收能力</h4>
-          <p>模型升级了，同样的业务流程能获得多少实际改善？还是瓶颈仍然存在？</p>
-          <div class="signal-measure">观察单位 <strong>固定任务集的前后表现</strong></div>
-        </article>
-        <article class="signal-card">
-          <div class="signal-top"><span>05 / RESILIENCE</span><span aria-hidden="true">↗</span></div>
-          <div class="signal-icon" aria-hidden="true">⟲</div>
-          <h3>Recovery Cost</h3>
-          <h4>错误恢复成本</h4>
-          <p>AI 出错之后，要花多少额外时间发现、纠正并把任务恢复到可接受的状态？</p>
-          <div class="signal-measure">观察单位 <strong>按错误严重度记录恢复时间</strong></div>
-        </article>
-        <article class="signal-card signal-closing">
-          <div class="signal-top"><span>THE REAL QUESTION</span><span aria-hidden="true">✳</span></div>
-          <h3>Measure the friction.<br/><em>Find the unlock.</em></h3>
-          <p>一个有价值的指标，不只是生成一个数字，更应该让你看清楚下一步能够改变什么。</p>
-          <a href="../../items/CREATIVE_METRICS_LAB.md">探索全部创意指标 <span aria-hidden="true">↗</span></a>
-        </article>
-      </div>
-      <p class="disclaimer">这些是正在探索的候选指标与观察方法，尚未经过科学校准，也尚未全部进入公开评分算法。</p>
-    </section>
-
-    <section class="measure-section" id="measure" aria-labelledby="measure-title">
-      <div class="main-container">
-        <div class="section-marker"><span>04 / TWO LENSES</span><span>双指标 · 两个问题</span></div>
-        <div class="measure-header">
-          <h2 id="measure-title">一个分数，<br/>还不够。</h2>
-          <p>组织可能具有很好的 AI 基础，却没有任何一项关键任务真正准备好运行。因此，我们把<strong>主体能力</strong>与<strong>活动运行准备</strong>分开观察。</p>
-        </div>
-        <div class="measure-grid">
-          <article class="measure-card">
-            <div class="measure-card-kicker">01 / ENTITY CAPABILITY</div>
-            <div class="measure-title"><h3>ReadyScore</h3><span>0—100</span></div>
-            <p>你已经具备多少与 AI 融合的基础能力？</p>
-            <div class="measure-lines" aria-hidden="true"><span style="width:79%"></span><span style="width:56%"></span><span style="width:86%"></span><span style="width:61%"></span></div>
-            <small>覆盖任务、知识、工具、协作、控制与学习能力。</small>
-          </article>
-          <article class="measure-card dark">
-            <div class="measure-card-kicker">02 / WORKFLOW READINESS</div>
-            <div class="measure-title"><h3>Ready Coverage</h3><span>0—100%</span></div>
-            <p>在适合 AI 的工作中，多少已经通过必要条件检查和代表性试运行？</p>
-            <div class="coverage-mark" aria-hidden="true"><span class="filled"></span><span class="filled"></span><span></span><span></span><span></span></div>
-            <small>缺少一项关键权限、验收或监督条件，就不能用其他高分抵消。</small>
-          </article>
-        </div>
-        <p class="measure-footnote">数值是量表范围，图形为装饰性示意，不代表任何已测量主体。现有公开测评为实验性自评，不提供经过验证的全球排名或安全认证。</p>
-      </div>
-    </section>
-
-    <section class="main-container audience-section">
-      <div class="section-marker"><span>05 / FOR EVERY ENTITY</span><span>通用主体</span></div>
-      <div class="audience-grid">
-        <h2>从一个人，<br/>到整个组织。</h2>
-        <div class="audience-detail">
-          <p>ReadyGap 不以企业规模或 AI 投入金额定义先进程度。一个人不需要企业级系统，一个部门也不必为了获得高分而追求不必要的自动化。</p>
-          <div class="audience-pills"><span>个人</span><span>小团队</span><span>部门</span><span>公司</span><span>集团</span><span>其他组织</span></div>
-          <p class="quiet">同一套概念可以跨主体使用，但不同主体的分数尚不能未经校准就直接排名比较。</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="final-cta" aria-labelledby="cta-title">
-      <div class="main-container cta-grid">
-        <div>
-          <div class="eyebrow">OPEN FRAMEWORK · OPEN QUESTIONS</div>
-          <h2 id="cta-title">The next AI breakthrough<br/>might be <em>inside us.</em></h2>
-          <p>有时，我们缺少的不是更强的模型，而是让现有模型真正理解、参与和完成工作的条件。</p>
-          <div class="final-actions">
-            <a class="button button-dark" href="./assessment.html">体验测评原型 <span aria-hidden="true">↗</span></a>
-            <a class="button button-text" href="https://github.com/liuh886/ReadyGap" target="_blank" rel="noopener noreferrer">参与开源项目 <span aria-hidden="true">↗</span></a>
-          </div>
-        </div>
-        <aside class="cta-aside">
-          <span>READYGAP / U-ARI</span>
-          <p>Assess.<br/>Understand.<br/><strong>Improve.</strong></p>
-          <small>先看到差距，再缩小差距。</small>
-        </aside>
-      </div>
-    </section>
-  </main>
-  <footer class="site-footer">
-    <div class="main-container footer-inner">
-      <div class="footer-brand"><a class="logo" href="./"><span class="logo-emblem" aria-hidden="true">R<span>.</span></span> ReadyGap</a><p>Measure the readiness of the entity, not the intelligence of the model.</p></div>
-      <nav aria-label="页脚导航"><a href="./assessment.html">Assessment</a><a href="../../framework/THESIS.md">Thesis</a><a href="../../items/CREATIVE_METRICS_LAB.md">Metrics Lab</a><a href="https://github.com/liuh886/ReadyGap">GitHub</a></nav>
-      <p class="copyright">© 2026 ReadyGap · Open-source experimental project. No certification or verified global benchmark. MIT License.</p>
     </div>
-  </footer>
-</body>
-</html>
+    <div class="hero-rail container"><span>THE MODEL FRONTIER IS MOVING.</span><span class="rail-line"></span><span>SO SHOULD THE PEOPLE USING IT.</span><span>SCROLL ↓</span></div>
+  </section>
+  <section class="statement section" id="why">
+    <div class="container">
+      <div class="section-eyebrow"><span>01 / THE THESIS</span><span>换个角度看 AI 进步</span></div>
+      <div class="statement-grid">
+        <div class="reveal"><h2>Better models<br/>don't guarantee<br/><span class="gradient-text">better outcomes.</span></h2></div>
+        <div class="statement-right reveal"><span class="quote-icon">“</span><p>As foundation models become increasingly capable and accessible, an entity's ability to <strong>absorb, operationalize and govern AI</strong> becomes a critical determinant of realized value.</p><p class="statement-cn">一家企业可以订阅最先进的模型，仍然无法让 AI 正确访问知识、调用工具、完成工作或验证结果。</p><a class="inline-link" href="../../framework/THESIS.md">Read our full thesis ↗</a></div>
+      </div>
+      <div class="triad" aria-label="三个需要分开测量的概念"><div><span>01</span><strong>Readiness</strong><small>是否具备条件</small></div><b>≠</b><div><span>02</span><strong>Adoption</strong><small>是否实际使用</small></div><b>≠</b><div><span>03</span><strong>Value</strong><small>是否创造价值</small></div></div>
+    </div>
+  </section>
+  <section class="thought section">
+    <div class="container">
+      <div class="section-eyebrow"><span>02 / A BETTER QUESTION</span><span>从真实工作出发</span></div>
+      <div class="thought-grid">
+        <div class="thought-heading reveal"><h2>Don't ask<br/>what you own.<br/><em>Ask what AI<br/>can actually do.</em></h2><p>如果给你的组织一个足够强的 AI Agent，它今天能做成什么？又会在哪一步被卡住？</p></div>
+        <div class="thought-panel reveal">
+          <div class="panel-header"><span>THE LAST-MILE TEST</span><span>REAL WORK / REAL CONSTRAINTS</span></div>
+          <div class="workflow"><div class="workflow-row"><span class="workflow-node complete">01 <i>✓</i></span><div><strong>Understand the task</strong><small>目标与情境是否明确</small></div></div><div class="workflow-line"></div><div class="workflow-row"><span class="workflow-node complete">02 <i>✓</i></span><div><strong>Access the knowledge</strong><small>资料是否可靠、可获得</small></div></div><div class="workflow-line"></div><div class="workflow-row blocked"><span class="workflow-node fail">03 <i>!</i></span><div><strong>Take an authorized action</strong><small>权限、系统与人机交接</small></div><span class="block-flag">BLOCKED</span></div><div class="workflow-line faded"></div><div class="workflow-row muted-row"><span class="workflow-node">04</span><div><strong>Verify and recover</strong><small>结果如何验收，错误如何恢复</small></div></div></div>
+          <div class="panel-bottom"><span>One missing link can stop the whole workflow.</span><span>↗</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="signals section" id="signals">
+    <div class="container">
+      <div class="section-eyebrow"><span>03 / UNEXPECTED SIGNALS</span><span>不一样的测量指标</span></div>
+      <div class="section-head"><h2>What if we measured<br/><span class="gradient-text">the invisible friction?</span></h2><p>不是泛泛地问有没有 AI 战略，而是去寻找那些具体、可观察、甚至有点反直觉的日常阻碍。</p></div>
+      <div class="bento">
+        <article class="metric-card metric-featured reveal">
+          <div class="metric-head"><span>01 · CONTEXT</span><span class="metric-arrow">↗</span></div>
+          <div class="metric-art art-context" aria-hidden="true"><div class="context-stack"><span>BUSINESS CONTEXT</span><span>INSTRUCTIONS</span><span>CONSTRAINTS</span></div><div class="context-orbit">AI<span>?</span></div><span class="context-line"></span></div>
+          <div class="metric-text"><small class="category">PREPARATION FRICTION</small><h3>Context<br/>Reconstruction Cost</h3><p>AI 生成结果只用了几秒，但你花了多久解释背景、找资料、定义真正的需求？</p><span class="metric-unit">Measure → human setup time per task</span></div>
+        </article>
+        <article class="metric-card reveal">
+          <div class="metric-head"><span>02 · INTERVENTION</span><span class="metric-arrow">↗</span></div>
+          <div class="mini-art rescue-art" aria-hidden="true"><span class="ring one"></span><span class="ring two"></span><span class="rescue-core">↺</span></div>
+          <div class="metric-text"><small class="category">WORKFLOW FRICTION</small><h3>Human Rescue Rate</h3><p>有多少任务需要<strong>非计划人工救援</strong>，才能让 AI 继续推进？</p><span class="metric-unit">Measure → unexpected rescue / attempts</span></div>
+        </article>
+        <article class="metric-card reveal">
+          <div class="metric-head"><span>03 · PORTABILITY</span><span class="metric-arrow">↗</span></div>
+          <div class="mini-art transfer-art" aria-hidden="true"><span>YOU</span><i>⟷</i><span>ANYONE</span></div>
+          <div class="metric-text"><small class="category">KNOWLEDGE TRANSFER</small><h3>Cold-start Transfer</h3><p>换一位新成员，带着同样的 AI 和资料，能把工作做成吗？</p><span class="metric-unit">Measure → first-try acceptance rate</span></div>
+        </article>
+        <article class="metric-card reveal">
+          <div class="metric-head"><span>04 · MODEL × ENTITY</span><span class="metric-arrow">↗</span></div>
+          <div class="mini-art upgrade-art" aria-hidden="true"><span class="upgrade-line one"></span><span class="upgrade-line two"></span><span class="upgrade-badge">V1 → V2</span></div>
+          <div class="metric-text"><small class="category">ABSORPTIVE CAPACITY</small><h3>Model Upgrade Capture</h3><p>模型升级之后，你的实际工作改善了多少？还是同样卡在旧流程？</p><span class="metric-unit">Measure → matched workflow gains</span></div>
+        </article>
+        <article class="metric-card reveal">
+          <div class="metric-head"><span>05 · RESILIENCE</span><span class="metric-arrow">↗</span></div>
+          <div class="mini-art recovery-art" aria-hidden="true"><span class="recovery-icon">⟲</span><span class="recovery-track"><i></i></span></div>
+          <div class="metric-text"><small class="category">FAILURE RECOVERY</small><h3>Recovery Cost</h3><p>AI 一旦出错，发现、修正并恢复到正确状态，需要多少额外时间？</p><span class="metric-unit">Measure → human recovery minutes</span></div>
+        </article>
+      </div>
+      <div class="signal-foot"><span>EXPLORATORY / NOT YET VALIDATED AS INDEX INPUTS</span><a href="../../items/CREATIVE_METRICS_LAB.md">Explore the indicator lab ↗</a></div>
+    </div>
+  </section>
+  <section class="method section" id="method">
+    <div class="container">
+      <div class="section-eyebrow"><span>04 / TWO MEASURES</span><span>不要只看一个分数</span></div>
+      <div class="method-head"><h2>One score<br/>isn't <span class="gradient-text">enough.</span></h2><p>一个主体可能准备了大量 AI 资源，却无法让任何关键任务真正运行。ReadyGap 将主体能力与工作就绪度分开衡量。</p></div>
+      <div class="score-grid">
+        <article class="score-card"><div class="score-label"><span>01 / ENTITY</span><span class="score-symbol">✳</span></div><h3>ReadyScore</h3><div class="score-range">0 <span>—</span> 100</div><p>主体拥有多少使用 AI 所需的基础能力？</p><div class="score-bars" aria-hidden="true"><span style="--w:89%"></span><span style="--w:63%"></span><span style="--w:76%"></span><span style="--w:49%"></span></div><small>Six capability dimensions · Experimental</small></article>
+        <article class="score-card coverage"><div class="score-label"><span>02 / ACTIVITIES</span><span class="score-symbol">◈</span></div><h3>Ready Coverage</h3><div class="score-range">0 <span>—</span> 100<sup>%</sup></div><p>多少 AI 适用任务已通过全部必要条件与试运行？</p><div class="score-segments" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div><small>Non-compensatory workflow gates · Experimental</small></article>
+      </div>
+      <p class="measure-note">这些数字为指数尺度范围，装饰图形不代表真实评估结果。目前仍是研究性自评，不提供经过验证的全球百分位或安全认证。</p>
+    </div>
+  </section>
+  <section class="lab-section section">
+    <div class="container lab-grid">
+      <div><div class="section-eyebrow"><span>05 / INTERACTIVE THOUGHT EXPERIMENT</span></div><h2>Find your<br/><span class="gradient-text">first blocker.</span></h2><p>尝试切换三种常见情境：模型本身可以完成任务，但组织中的不同约束会令实际流程停住。</p><div class="lab-buttons" role="group" aria-label="切换工作流瓶颈情境"><button type="button" data-scenario="context" aria-pressed="true">Knowledge</button><button type="button" data-scenario="tools" aria-pressed="false">Systems</button><button type="button" data-scenario="control" aria-pressed="false">Control</button></div><p class="lab-disclaimer">示意交互，不计算用户得分，也不代表具体组织的真实问题。</p></div>
+      <div class="scenario-panel" aria-live="polite"><div class="scenario-header"><span><i></i> WORKFLOW DIAGNOSTIC</span><span>CONCEPT / 03</span></div><div class="scenario-flow"><div class="scenario-step"><span>01</span><strong>AI CAPABILITY</strong><b>AVAILABLE</b></div><div class="scenario-connector"></div><div class="scenario-step active"><span>02</span><strong id="scenario-label">CONTEXT ACCESS</strong><b id="scenario-status">BLOCKED</b></div><div class="scenario-connector blocked-connector"></div><div class="scenario-step inactive"><span>03</span><strong>WORK COMPLETED</strong><b>NOT YET</b></div></div><div class="scenario-insight"><span>RECOMMENDED UNLOCK</span><p id="scenario-insight">建立经过授权、可追溯的任务知识入口，让 AI 能够获得正确背景。</p></div></div>
+    </div>
+  </section>
+  <section class="audience section"><div class="container audience-layout"><div><div class="section-eyebrow"><span>06 / UNIVERSAL BY DESIGN</span></div><h2>From one person.<br/><span class="gradient-text">To every entity.</span></h2><p>个人、团队、部门、企业、集团。不是比较谁投入最多，而是看谁已经具备恰当的工作条件。</p></div><div class="entity-list"><div><span>01</span> Individual <small>个人</small></div><div><span>02</span> Team <small>团队</small></div><div><span>03</span> Department <small>部门</small></div><div><span>04</span> Organization <small>组织 / 公司 / 集团</small></div></div></div></section>
+  <section class="cta"><div class="container cta-container"><span class="cta-eyebrow"><span class="orb"></span> NOW BUILDING IN THE OPEN</span><h2>The next AI breakthrough<br/>might be <em>inside us.</em></h2><p>AI 的下一步，不只有更强的模型，也有更好的工作方式。<br/>让我们一起找到从模型能力到实际价值之间，真正缺失的条件。</p><div class="cta-actions"><a class="button button-primary" href="./assessment.html">Explore the assessment <span>↗</span></a><a class="button button-border" href="https://github.com/liuh886/ReadyGap" target="_blank" rel="noopener noreferrer">Star on GitHub <span>↗</span></a></div><div class="cta-orbit" aria-hidden="true"></div></div></section>
+</main>
+<footer class="footer"><div class="container footer-grid"><a class="brand" href="./"><span class="brand-logo" aria-hidden="true"><i></i><i></i><i></i></span><span>ready<span class="brand-em">gap</span></span></a><p>Measure the readiness of the entity, not the intelligence of the model.</p><nav aria-label="页脚链接"><a href="../../framework/THESIS.md">Thesis</a><a href="../../items/CREATIVE_METRICS_LAB.md">Metric Lab</a><a href="./assessment.html">Assessment</a><a href="https://github.com/liuh886/ReadyGap" target="_blank" rel="noopener noreferrer">Source</a></nav><small>© 2026 ReadyGap. Open-source experimental project · MIT License · No certified readiness claims.</small></div></footer>
+</body></html>

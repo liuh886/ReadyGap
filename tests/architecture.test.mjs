@@ -8,7 +8,7 @@ test("the project is divided into independent research, items, scoring, validati
     "framework/THESIS.md","framework/MEASUREMENT_MODEL.md","framework/DESIGN_PRINCIPLES.md",
     "items/INDICATOR_REGISTER.md","items/indicators.json","items/gates.json",
     "scoring/engine.mjs","scoring/SCORING_SPEC.md",
-    "validation/VALIDATION_PLAN.md","benchmarks/README.md","apps/web/index.html","apps/web/landing.css","apps/web/assessment.html","apps/web/app.mjs",
+    "validation/VALIDATION_PLAN.md","benchmarks/README.md","apps/web/index.html","apps/web/landing.css","apps/web/landing.js","apps/web/favicon.svg","apps/web/assessment.html","apps/web/assessment-dark.css","apps/web/app.mjs",
     "docs/ARCHITECTURE.md"
   ]) assert.ok(existsSync(new URL(path, root)), "missing "+path);
 });
@@ -24,7 +24,7 @@ test("web references canonical scoring and item files, not duplicates or backend
   assert.ok(home.includes('href="./assessment.html"'));
   assert.ok(!home.includes('id="indicator-list"'), "do not embed questionnaire in homepage");
   assert.ok(!home.includes('src="./app.mjs"'), "assessment engine should not load on homepage");
-  assert.ok(home.includes("AI is advancing."));
+  assert.ok(home.includes("AI is getting"));
   assert.ok(home.includes("Context Reconstruction Cost"));
   assert.ok(home.includes("Human Rescue Rate"));
   assert.ok(home.includes("Cold-start Transfer"));

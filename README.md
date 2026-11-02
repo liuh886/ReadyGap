@@ -52,7 +52,7 @@ Scores describe the **declared scope, period and evidence state**. They are not 
 
 **Next step is divergent discovery, not prematurely proving the 12-item questionnaire.** We deliberately brainstorm unusual, task-observable measurements that can surprise the respondent and point toward a controllable fix.
 
-- **[24 creative metric candidates](items/CREATIVE_METRICS_LAB.md)** — context warm-up tax, cold-start transfer, permission hops, read-to-act gaps, recovery cost, model-upgrade capture, one-change unlock and more. Candidates are labeled as *preconditions*, *friction*, *stress tests*, *outcomes* or *model interactions*, not silently inserted into ReadyScore.
+- **[25 creative metric candidates](items/CREATIVE_METRICS_LAB.md)** — context warm-up tax, cold-start transfer, permission hops, read-to-act gaps, recovery cost, model-upgrade capture, one-change unlock and more. Candidates are labeled as *preconditions*, *friction*, *stress tests*, *outcomes* or *model interactions*, not silently inserted into ReadyScore.
 - **[Four lightweight field pilots](validation/FAST_PILOTS.md)** — observe real tasks first, then review whether the metric adds clarity and changes a practical decision.
 - **Convergence later:** only after exploratory feedback, apply What / Why / Numeric / Evidence / Action and formal validity checks. **The existing 12 indicators and scoring formulas remain unchanged in this round.**
 
@@ -78,9 +78,9 @@ See [full architecture and dependency rules](docs/ARCHITECTURE.md).
 
 **The homepage is not the 12-item questionnaire.** It introduces the research thesis, a conceptual diagram of the model frontier vs entity readiness, five counterintuitive field signals, and the two-score idea. Visitors then opt into an **independent assessment page**.
 
-- **[Landing page](apps/web/index.html)** — public-facing story and the idea behind ReadyGap.
-- **[Assessment prototype](apps/web/assessment.html)** — separate, explicitly experimental numerical form, backed by the existing scoring engine.
-- **[Landing CSS](apps/web/landing.css)** — presentation layer separate from the existing form CSS, not part of the measurement method.
+- **[Landing page](apps/web/index.html)** — AI-native dark design, animated conceptual gap monitor, editorial story and interactive constraint switcher.
+- **[Assessment prototype](apps/web/assessment.html)** — a separate, tech-styled experimental numerical form, backed by the unchanged scoring engine.
+- **[Landing CSS](apps/web/landing.css)** and [micro-interaction](apps/web/landing.js) — presentation layer isolated from scoring, with accessible reduced-motion styling.
 
 **Featured exploratory signals:** Context Reconstruction Cost, Human Rescue Rate, Cold-start Transfer, Model Upgrade Capture and Recovery Cost. These are research candidates, **not** extra inputs or weights in ReadyScore.
 
@@ -101,7 +101,7 @@ Run regression tests with Node.js 20+:
 node --test tests/*.test.mjs
 ```
 
-The code is ready for hosting from the repo root as static files, but **public deployment and browser QA must be verified separately**.
+**Deployment:** [GitHub Pages CI/CD](docs/DEPLOYMENT.md) publishes from `main` via official actions after GitHub Pages is enabled in Settings. Deploy success and the public URL must be verified separately. Browser visual QA remains a separate step.
 
 ## Start here
 
